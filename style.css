@@ -3353,6 +3353,55 @@ img { display: block; }
 
 .roster-pane--hidden { display: none; }
 
+/* Team info strip (coach + formation above roster) */
+.team-meta-strip {
+  border-bottom: 1px solid var(--color-border-secondary);
+  background: white;
+  flex-shrink: 0;
+}
+.team-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--color-border-secondary);
+  min-height: 44px;
+}
+.team-meta-row:last-child { border-bottom: none; }
+.team-meta-label {
+  width: 76px;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+.team-meta-input,
+.team-meta-select {
+  flex: 1;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  outline: none;
+  background: white;
+  box-shadow: 0 1px 2px rgba(16,24,40,0.04);
+  transition: border-color 0.15s;
+}
+.team-meta-input:focus,
+.team-meta-select:focus { border-color: var(--color-blue-500); box-shadow: 0 0 0 3px rgba(21,112,239,0.1); }
+.team-meta-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23667085' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+  cursor: pointer;
+}
+
 .roster-section {
   padding: 12px 16px;
   border-bottom: 1px solid var(--color-border-secondary);
@@ -3466,35 +3515,39 @@ img { display: block; }
 /* Category tabs */
 .stats-cat-bar {
   display: flex;
-  padding: 0;
+  padding: 16px 24px 0;
   border-bottom: 1px solid var(--color-border-secondary);
   background: #fcfcfd;
   flex-shrink: 0;
   overflow-x: auto;
   scrollbar-width: none;
+  align-items: flex-end;
 }
 .stats-cat-bar::-webkit-scrollbar { display: none; }
 
 .stats-cat {
   flex: 0 0 auto;
   height: 40px;
-  padding: 0 14px;
+  padding: 0 10px;
   border: none;
+  outline: none;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
+  border-radius: 8px 8px 0 0;
   background: transparent;
   font-size: 13px;
   font-weight: 500;
   color: #667085;
   cursor: pointer;
   white-space: nowrap;
-  transition: color 0.15s, border-color 0.15s;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
-.stats-cat:hover { color: #101828; }
+.stats-cat:hover { color: #101828; background: #f9fafb; }
 .stats-cat--active {
   color: #101828;
   font-weight: 600;
   border-bottom-color: #1570ef;
+  background: var(--color-blue-50);
 }
 
 /* Stats body */
