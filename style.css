@@ -5401,7 +5401,7 @@ html.dark .display-btn-icon--inline:hover { background: var(--color-bg-tertiary)
 html.dark * { scrollbar-color: var(--color-border-primary) transparent; }
 
 /* ---- Content pane background ---- */
-html.dark .content-pane              { background: var(--color-bg-secondary); }
+html.dark .content-pane              { background: var(--color-bg-primary); }
 
 /* ---- Edit panel ---- */
 html.dark .edit-panel__title         { color: var(--color-text-secondary); }
