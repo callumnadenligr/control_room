@@ -5328,3 +5328,74 @@ html.dark .btn--secondary:hover       { background: var(--color-bg-primary); }
 html.dark .btn--secondary svg path,
 html.dark .btn--secondary svg circle,
 html.dark .btn--secondary svg rect    { stroke: var(--color-text-secondary); }
+
+/* ---- Content topbar + type tabs (Graphics/Media/Data/Overlays) ---- */
+html.dark .content-topbar             { background: var(--color-bg-primary); }
+html.dark .content-type-tabs          { background: var(--color-bg-secondary); border-color: var(--color-border-subtle); }
+html.dark .content-type-tab           { color: var(--color-text-quaternary); }
+html.dark .content-type-tab--active   {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+}
+
+/* ---- Category tab bar (Default | + Tab | Add Graphic) ---- */
+html.dark .category-tabs-bar          { background: var(--color-bg-primary); }
+html.dark .category-tab               { color: var(--color-text-quaternary); }
+html.dark .category-tab:hover         { color: var(--color-text-primary); background: var(--color-bg-tertiary); }
+html.dark .category-tab__badge        { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-secondary); }
+html.dark .category-tab__close:hover  { background: rgba(255,255,255,0.1); color: var(--color-text-secondary); }
+
+/* ---- Search input (complete override) ---- */
+html.dark .search-input               { background: var(--color-bg-primary); border-color: var(--color-border-primary); }
+html.dark .search-input__shortcut     { color: var(--color-text-quaternary); border-color: var(--color-border-secondary); }
+html.dark .search-input__field::placeholder { color: var(--color-text-placeholder); }
+html.dark .search-input__clear:hover  { color: var(--color-text-secondary); background: var(--color-bg-tertiary); }
+
+/* ---- Graphic card text ---- */
+html.dark .graphic-card__name         { color: var(--color-text-primary); }
+html.dark .graphic-card__meta         { color: var(--color-text-tertiary); }
+html.dark .graphic-card--on-air .graphic-card__name { color: var(--color-text-primary); }
+html.dark .graphic-card--on-air .graphic-card__meta { color: var(--color-text-secondary); }
+
+/* Extension cards inside preview/on-air parent cards */
+html.dark .graphic-card--preview-state .graphic-card__extension.graphic-card--default {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.08);
+}
+html.dark .graphic-card--on-air .graphic-card__extension.graphic-card--default {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(249,112,102,0.2);
+}
+
+/* ---- Data sub tabs ---- */
+html.dark .data-sub-tabs-bar          { background: var(--color-bg-primary); }
+html.dark .data-sub-tab               { color: var(--color-text-quaternary); }
+html.dark .data-sub-tab:hover         { color: var(--color-text-primary); background: var(--color-bg-tertiary); }
+html.dark .data-sub-tab--active       { color: var(--color-text-primary); }
+
+/* ---- Variable field inputs (graphic card edit panel) ---- */
+html.dark .variable-field__input      {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+}
+html.dark .variable-field__input::placeholder { color: var(--color-text-placeholder); }
+
+/* ---- Display tab inputs + buttons ---- */
+html.dark .display-input              {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+}
+html.dark .display-section__label    { color: var(--color-text-secondary); }
+html.dark .display-btn-icon           {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-secondary);
+}
+html.dark .display-btn-icon:hover     { background: var(--color-bg-tertiary); }
+html.dark .display-btn-icon--inline:hover { background: var(--color-bg-tertiary); }
+
+/* ---- Global scrollbar ---- */
+html.dark * { scrollbar-color: var(--color-border-primary) transparent; }
