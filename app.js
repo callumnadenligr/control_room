@@ -2878,3 +2878,23 @@ document.getElementById('matchEventsList')?.addEventListener('click', (e) => {
     _openEventFilter(eventRow);
   }
 });
+
+
+// ---- Dark Mode Toggle ----
+(function () {
+  const html = document.documentElement;
+  const btn = document.getElementById('darkModeToggle');
+  if (!btn) return;
+
+  // Restore saved preference (or use system preference as fallback)
+  const saved = localStorage.getItem('cr-dark');
+  const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+  if (saved === '1' || (saved === null && prefersDark)) {
+    html.classList.add('dark');
+  }
+
+  btn.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    localStorage.setItem('cr-dark', html.classList.contains('dark') ? '1' : '0');
+  });
+})();

@@ -5132,3 +5132,199 @@ img { display: block; }
   font-family: inherit;
 }
 .ag-toast__undo:hover { color: #93c5fd; }
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+/* ---- Toggle icon visibility ---- */
+.dm-icon--sun { display: none; }
+html.dark .dm-icon--moon { display: none; }
+html.dark .dm-icon--sun { display: block; }
+
+/* ---- CSS variable overrides ---- */
+html.dark {
+  --color-bg-primary:        #161c2c;
+  --color-bg-secondary:      #0d1117;
+  --color-bg-tertiary:       #1d2638;
+  --color-border-primary:    #2d3d5a;
+  --color-border-secondary:  #243150;
+  --color-border-subtle:     #1e2840;
+  --color-text-primary:      #f1f5f9;
+  --color-text-secondary:    #cbd5e1;
+  --color-text-tertiary:     #94a3b8;
+  --color-text-quaternary:   #64748b;
+  --color-text-placeholder:  #475569;
+  --color-blue-50:           #0c1a2e;
+  --color-error-50:          #2d1014;
+  --color-error-200:         #7a2c28;
+  --color-warning-50:        #221607;
+  --color-warning-200:       #6b4212;
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.5);
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ---- Logo ---- */
+html.dark .ligr-logo { filter: brightness(0) invert(1); }
+
+/* ---- Nav icon SVG brightness (covers hardcoded fill/stroke colors) ---- */
+html.dark .nav-icon-btn:not(.dm-toggle) svg,
+html.dark .nav-tab svg { filter: brightness(0) invert(0.7); }
+
+/* ---- Nav button surfaces ---- */
+html.dark .nav-tab:hover,
+html.dark .nav-icon-btn:hover { background: var(--color-bg-tertiary); }
+
+/* ---- Match header ---- */
+html.dark .scoreboard__team-name { color: var(--color-text-primary); }
+html.dark .scoreboard__score     { color: var(--color-text-primary); }
+html.dark .scoreboard__avatar    { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); }
+html.dark .match-header__competition-name { color: var(--color-text-primary); }
+html.dark .match-header__competition-sub  { color: var(--color-text-tertiary); }
+html.dark .scoreboard__status-text        { color: var(--color-text-quaternary); }
+
+/* ---- Sidebar ---- */
+html.dark .sidebar-match-btn          { background: var(--color-bg-primary); }
+html.dark .sidebar-match-btn:hover    { background: var(--color-bg-tertiary); }
+html.dark .sidebar-section__header:hover { background: var(--color-bg-tertiary); }
+html.dark .sidebar-badge              { background: var(--color-bg-tertiary); }
+
+/* ---- Score / Number inputs ---- */
+html.dark .number-input__btn          { background: var(--color-bg-primary); }
+html.dark .number-input__btn:hover    { background: var(--color-bg-tertiary); }
+html.dark .number-input__field        { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+html.dark .clock-input__field         { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+
+/* ---- Quick buttons ---- */
+html.dark .quick-btn                  { background: var(--color-bg-primary); }
+html.dark .quick-btn:hover            { background: var(--color-bg-tertiary); }
+
+/* ---- Team tabs (Quick Events sidebar) ---- */
+html.dark .team-tabs                  { background: var(--color-bg-secondary); }
+html.dark .team-tabs .team-tab        { color: var(--color-text-quaternary); }
+html.dark .team-tabs .team-tab--active {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+}
+
+/* ---- Event buttons ---- */
+html.dark .event-btn                  { background: var(--color-bg-primary); }
+html.dark .event-btn:hover            { background: var(--color-bg-tertiary); }
+html.dark .event-btn:active           { background: var(--color-border-subtle); }
+html.dark .event-btn--goal            { background: #0e2a1c; border-color: #166534; color: #4ade80; }
+html.dark .event-btn--goal:hover      { background: #14391f; }
+html.dark .event-btn--yellow          { background: #2a1f06; border-color: #713f12; color: #fbbf24; }
+html.dark .event-btn--yellow:hover    { background: #372906; }
+html.dark .event-btn--red             { background: #2d0e0e; border-color: #7f1d1d; color: #f87171; }
+html.dark .event-btn--red:hover       { background: #3d1111; }
+html.dark .event-btn--sub             { background: #0c1a32; border-color: #1e3a6e; color: #60a5fa; }
+html.dark .event-btn--sub:hover       { background: #102240; }
+html.dark .event-btn--penalty         { background: #1a0f2e; border-color: #4c1d95; color: #a78bfa; }
+html.dark .event-btn--penalty:hover   { background: #22133a; }
+
+/* ---- Graphic groups + cards ---- */
+html.dark .group-header__collapse     { background: var(--color-bg-primary); }
+html.dark .group-header__collapse:hover { background: var(--color-bg-tertiary); }
+html.dark .group-header__menu:hover   { background: var(--color-bg-tertiary); }
+
+html.dark .graphic-card--default      { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+html.dark .graphic-card--hover        { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); }
+html.dark .graphic-card__thumbnail    { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); }
+html.dark .graphic-card--on-air .btn-icon--edit {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border-primary);
+}
+
+/* ---- Search ---- */
+html.dark .search-input               { background: var(--color-bg-primary); }
+html.dark .search-input__field::placeholder { color: var(--color-text-placeholder); }
+html.dark .search-input__clear:hover  { color: var(--color-text-secondary); background: var(--color-bg-tertiary); }
+
+/* ---- Preview modal ---- */
+html.dark .preview-modal__content     { background: var(--color-bg-primary); }
+html.dark .preview-modal__left        { background: var(--color-bg-primary); }
+html.dark .overlay-tabs               { border-bottom-color: var(--color-border-secondary); }
+html.dark .overlay-tab                { color: var(--color-text-quaternary); }
+html.dark .overlay-tab:hover          { color: var(--color-text-primary); }
+html.dark .overlay-tab--active        {
+  color: var(--color-text-primary);
+  background: var(--color-blue-50);
+  border-bottom-color: var(--color-blue-500);
+}
+html.dark .preview-modal__right       { background: var(--color-bg-primary); border-left-color: var(--color-border-secondary); }
+html.dark .preview-modal__graphic-name { color: var(--color-text-primary); }
+html.dark .preview-modal__vars-meta   { color: var(--color-text-tertiary); }
+html.dark .preview-modal__footer      { background: var(--color-bg-primary); border-top-color: var(--color-border-secondary); }
+html.dark .pm-tabs-bar                { background: var(--color-bg-secondary); border-color: var(--color-border-subtle); }
+html.dark .pm-tab                     { color: var(--color-text-tertiary); }
+html.dark .pm-tab--active             {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+}
+html.dark .preview-modal__variables .variable-field__label { color: var(--color-text-secondary); }
+html.dark .preview-modal__variables .variable-field__input {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+}
+
+/* ---- App modal (add graphic, add media, edit player) ---- */
+html.dark .app-modal__content         { background: var(--color-bg-primary); }
+html.dark .app-modal__body            { background: var(--color-bg-primary); }
+html.dark .app-modal__sub-tabs        { background: var(--color-bg-secondary); border-bottom-color: var(--color-border-secondary); }
+
+/* Add Graphic template cards */
+html.dark .ag-template-list           { background: var(--color-bg-secondary); }
+html.dark .ag-tpl-card                { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); }
+html.dark .ag-tpl-card:hover          { border-color: #3b82f6; }
+html.dark .ag-tpl-card__name         { color: var(--color-text-primary); }
+html.dark .ag-tpl-card__meta         { color: var(--color-text-tertiary); }
+
+/* Add Graphic step 2+ fields */
+html.dark .ag-step-body              { background: var(--color-bg-primary); }
+html.dark .ag-field-input,
+html.dark .ag-field-select           { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-primary); }
+
+/* ---- Team data panel ---- */
+html.dark .team-card                  { background: var(--color-bg-primary); border-color: var(--color-border-secondary); box-shadow: 0 1px 2px rgba(0,0,0,0.4); }
+html.dark .team-tabs-bar              { background: var(--color-bg-primary); border-bottom-color: var(--color-border-secondary); }
+html.dark .team-field__input,
+html.dark .team-field__select         { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-primary); }
+html.dark .bench-title                { color: var(--color-text-primary); }
+html.dark .bench-table                { background: var(--color-bg-primary); border-color: var(--color-border-secondary); box-shadow: 0 1px 2px rgba(0,0,0,0.4); }
+html.dark .roster-row                 { border-bottom-color: var(--color-border-secondary); }
+html.dark .roster-row--bench:hover    { background: var(--color-bg-tertiary); }
+html.dark .roster-row__avatar,
+html.dark .roster-row__num-badge      { background: var(--color-bg-tertiary); }
+html.dark .roster-row__edit           { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+
+/* ---- Stats cat bar ---- */
+html.dark .stats-cat-bar              { background: var(--color-bg-primary); border-bottom-color: var(--color-border-secondary); }
+html.dark .stats-cat:hover            { background: var(--color-bg-tertiary); color: var(--color-text-primary); }
+
+/* ---- Clock display ---- */
+html.dark .clock-display              { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+html.dark .clock-display.running      { background: #0e2218; border-color: #166534; }
+html.dark .clock-btn-sm               { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+html.dark .clock-btn-sm:hover         { background: var(--color-bg-tertiary); }
+html.dark .run-btn__track             { background: var(--color-border-primary); }
+
+/* ---- Scrollbar thumbs ---- */
+html.dark .sidebar::-webkit-scrollbar-thumb,
+html.dark .graphics-content::-webkit-scrollbar-thumb,
+html.dark .pm-tab-pane::-webkit-scrollbar-thumb { background: var(--color-border-primary); }
+
+/* ---- Data form inputs ---- */
+html.dark .data-form__input,
+html.dark .data-form__select,
+html.dark .data-form__textarea,
+html.dark .variable-field__input      { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-primary); }
+
+/* ---- Btn secondary ---- */
+html.dark .btn--secondary             { background: var(--color-bg-tertiary); }
+html.dark .btn--secondary:hover       { background: var(--color-bg-primary); }
+html.dark .btn--secondary svg path,
+html.dark .btn--secondary svg circle,
+html.dark .btn--secondary svg rect    { stroke: var(--color-text-secondary); }
