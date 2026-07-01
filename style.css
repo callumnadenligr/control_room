@@ -5399,3 +5399,110 @@ html.dark .display-btn-icon--inline:hover { background: var(--color-bg-tertiary)
 
 /* ---- Global scrollbar ---- */
 html.dark * { scrollbar-color: var(--color-border-primary) transparent; }
+
+/* ---- Content pane background ---- */
+html.dark .content-pane              { background: var(--color-bg-secondary); }
+
+/* ---- Edit panel ---- */
+html.dark .edit-panel__title         { color: var(--color-text-secondary); }
+html.dark .edit-panel__subtitle      { color: var(--color-text-tertiary); }
+html.dark .edit-panel__close:hover   { background: var(--color-bg-tertiary); }
+html.dark .edit-panel__tabs-bar      { background: var(--color-bg-secondary); border-color: var(--color-border-subtle); }
+html.dark .edit-panel__tab           { color: var(--color-text-quaternary); }
+html.dark .edit-panel__tab--active   { background: var(--color-bg-primary); border-color: var(--color-border-primary); color: var(--color-text-primary); }
+html.dark .edit-panel__variables::-webkit-scrollbar-thumb,
+html.dark .edit-panel__tab-pane::-webkit-scrollbar-thumb { background: var(--color-border-primary); }
+html.dark .variable-field__label     { color: var(--color-text-secondary); }
+html.dark .variable-field__input     { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-primary); }
+
+/* ---- Match event menu & context menu ---- */
+html.dark .match-event__menu-btn     { background: var(--color-bg-primary); }
+html.dark .match-event__menu-btn:hover { background: var(--color-bg-tertiary); }
+html.dark .event-context-menu        { background: var(--color-bg-primary); border-color: var(--color-border-primary); box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+html.dark .event-context-menu__item:hover { background: var(--color-bg-tertiary); }
+
+/* ---- App modal sub-tabs ---- */
+html.dark .app-modal__sub-tabs       { background: var(--color-bg-secondary); }
+html.dark .app-modal__sub-tab:hover  { background: var(--color-bg-tertiary); color: var(--color-text-primary); }
+
+/* ---- Media list ---- */
+html.dark .media-list-item:hover     { background: var(--color-bg-tertiary); }
+
+/* ---- Modal form inputs ---- */
+html.dark .modal-form__input         { background: var(--color-bg-tertiary); color: var(--color-text-primary); }
+
+/* ---- Data form ---- */
+html.dark .data-form                 { background: var(--color-bg-primary); }
+html.dark .data-form__select-wrap    { background: var(--color-bg-tertiary); }
+html.dark .data-form__input          { background: var(--color-bg-tertiary); }
+
+/* ---- Team meta strip (legacy) ---- */
+html.dark .team-meta-strip           { background: var(--color-bg-primary); }
+html.dark .team-meta-input,
+html.dark .team-meta-select          { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); color: var(--color-text-primary); }
+
+/* ---- Roster row text colors ---- */
+html.dark .roster-row__name          { color: var(--color-text-primary); }
+html.dark .roster-row__pos           { color: var(--color-text-tertiary); }
+
+/* ---- Stats body & cards ---- */
+html.dark .stats-body                { background: var(--color-bg-secondary); }
+html.dark .stat-card                 { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+html.dark .stat-card__val            { color: var(--color-text-primary); }
+html.dark .stat-card__label          { color: var(--color-text-quaternary); }
+html.dark .stat-card__bar-track      { background: var(--color-border-secondary); }
+html.dark .stat-card__bar-home       { background: #60a5fa; }
+html.dark .stat-card__bar-away       { background: #94a3b8; }
+
+/* ---- Edit player modal ---- */
+html.dark .ep-form__label            { color: var(--color-text-secondary); }
+html.dark .ep-form__input            { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-primary); }
+html.dark .ep-avatar                 { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); }
+html.dark .ep-modal__footer-divider  { background: var(--color-border-secondary); }
+html.dark .ep-btn--cancel            { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-secondary); }
+html.dark .ep-btn--cancel:hover      { background: var(--color-bg-primary); }
+
+/* ---- Overlays table ---- */
+html.dark .overlays-table            { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+html.dark .overlays-table__header    { background: var(--color-bg-secondary); }
+html.dark .overlay-row:hover         { background: var(--color-bg-tertiary); }
+html.dark .overlay-row__icon         { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); }
+html.dark .overlay-row__stream-icon  { background: var(--color-bg-tertiary); }
+
+/* ---- Overlay selector dropdown ---- */
+html.dark .overlay-selector__btn     { background: var(--color-bg-primary); }
+html.dark .overlay-selector__btn:hover { background: var(--color-bg-tertiary); }
+html.dark .overlay-selector__menu    { background: var(--color-bg-primary); border-color: var(--color-border-secondary); box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+html.dark .overlay-selector__item:hover { background: var(--color-bg-tertiary); }
+
+/* ---- Group dropdown ---- */
+html.dark .group-dropdown            { background: var(--color-bg-primary); border-color: var(--color-border-secondary); box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+html.dark .group-dropdown__item:hover { background: var(--color-bg-tertiary); }
+
+/* ---- Overlay status chips (header bar) ---- */
+html.dark .overlay-status-chip       { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-secondary); }
+
+/* ---- Search results panel ---- */
+html.dark .search-results__tab-bar   { background: var(--color-bg-primary); }
+html.dark .search-results__tab       { color: var(--color-text-quaternary); }
+html.dark .search-results__tab--active { color: var(--color-text-primary); }
+html.dark .search-tab-badge          { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); }
+html.dark .search-tab-badge__count   { color: var(--color-text-secondary); }
+html.dark .search-results__body::-webkit-scrollbar-thumb { background: var(--color-border-primary); }
+html.dark .search-section__header    { color: var(--color-text-primary); }
+html.dark .search-result-card        { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
+html.dark .search-result-card:hover  { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); }
+html.dark .search-result-card__thumb { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); }
+html.dark .search-result-card__name  { color: var(--color-text-primary); }
+html.dark .search-result-card__meta  { color: var(--color-text-tertiary); }
+html.dark .search-empty__title       { color: var(--color-text-primary); }
+html.dark .search-empty__sub         { color: var(--color-text-quaternary); }
+
+/* ---- Add Graphic modal step 2 ---- */
+html.dark .ag-field__input           { background: var(--color-bg-tertiary); color: var(--color-text-primary); }
+html.dark .ag-field__toggle-row      { background: var(--color-bg-secondary); }
+html.dark .ag-preview-card           { background: var(--color-bg-secondary); }
+html.dark .ag-preview-card__thumb    { background: var(--color-bg-tertiary); }
+
+/* ---- Media prop fields (edit panel) ---- */
+html.dark .media-prop-field          { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); }
