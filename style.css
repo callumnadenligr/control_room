@@ -3121,7 +3121,16 @@ img { display: block; }
    ============================================================ */
 .team-sub-panel { padding: 0 !important; }
 
-.team-panel {
+/* Team sub-panel outer padding override */
+.team-sub-panel { padding: 24px !important; }
+
+/* Team card wrapper */
+.team-card {
+  background: white;
+  border: 1px solid #eaecf0;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(16,24,40,0.05);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -3164,22 +3173,100 @@ img { display: block; }
   background: var(--color-blue-50);
 }
 
-.team-layout {
+/* Coach / Formation fields row */
+.team-fields-row {
   display: flex;
-  min-height: 440px;
+  gap: 24px;
+  padding: 24px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+.team-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+.team-field--wide { flex: 0 0 55%; }
+.team-field__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #414651;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.team-field__input,
+.team-field__select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  background: white;
+  border: 1px solid #d5d7da;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #181d27;
+  font-family: inherit;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(10,13,18,0.05);
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.team-field__input:focus,
+.team-field__select:focus {
+  border-color: #1570ef;
+  box-shadow: 0 0 0 3px rgba(21,112,239,0.1);
+}
+.team-field__select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23667085' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Pitch + Bench content row */
+.team-content-row {
+  display: flex;
+  gap: 24px;
+  padding: 0 24px 24px;
+  align-items: flex-start;
 }
 
 /* ---- Pitch ---- */
 .pitch-wrap {
-  flex: 1 1 0;
-  padding: 20px;
+  flex: 0 0 55%;
+  max-width: 480px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  border-right: 1px solid var(--color-border-secondary);
-  overflow-y: auto;
-  min-width: 220px;
-  max-width: 440px;
+  overflow: hidden;
+}
+
+/* ---- Bench panel ---- */
+.bench-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  overflow: hidden;
+}
+.bench-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #101828;
+  line-height: 28px;
+}
+.bench-table {
+  background: white;
+  border: 1px solid #eaecf0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(16,24,40,0.05);
 }
 
 .pitch {
@@ -3430,13 +3517,15 @@ img { display: block; }
 .roster-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 6px;
-  border-radius: 6px;
-  border: 1px solid transparent;
+  gap: 12px;
+  padding: 16px;
+  min-height: 72px;
+  border-bottom: 1px solid #eaecf0;
   cursor: default;
-  min-height: 32px;
+  box-sizing: border-box;
 }
+
+.roster-row:last-child { border-bottom: none; }
 
 .roster-row--bench {
   cursor: grab;
@@ -3444,7 +3533,6 @@ img { display: block; }
 
 .roster-row--bench:hover {
   background: #f9fafb;
-  border-color: var(--color-border-secondary);
 }
 
 .roster-row--bench:active { cursor: grabbing; }
@@ -3453,59 +3541,77 @@ img { display: block; }
 
 .roster-row__drag {
   color: #d1d5db;
-  font-size: 12px;
   cursor: grab;
   flex-shrink: 0;
-  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
-.roster-row__badge {
-  width: 22px;
-  height: 22px;
+.roster-row__avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #1e40af;
-  color: white;
-  font-size: 9px;
-  font-weight: 700;
+  background: #f2f4f7;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.roster-row--away .roster-row__badge { background: #991b1b; }
+.roster-row__num-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f2f4f7;
+  font-size: 12px;
+  font-weight: 500;
+  color: #667085;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.roster-row__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
 
 .roster-row__name {
-  flex: 1;
-  font-size: 13px;
-  color: var(--color-text-primary);
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .roster-row__pos {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--color-text-quaternary);
-  flex-shrink: 0;
+  font-size: 14px;
+  color: #475467;
 }
 
 .roster-row__edit {
-  width: 22px; height: 22px;
-  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   border: 1px solid #e5e7eb;
   background: white;
   cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #9ca3af;
   flex-shrink: 0;
   opacity: 0;
-  transition: opacity 0.1s;
+  transition: opacity 0.15s;
 }
 
 .roster-row:hover .roster-row__edit { opacity: 1; }
-.roster-row__edit:hover { color: var(--color-text-primary); border-color: #d1d5db; }
+.roster-row__edit:hover { color: #101828; border-color: #d1d5db; }
 
 /* ============================================================
    STATS TAB

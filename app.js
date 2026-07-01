@@ -2276,7 +2276,8 @@ let _dragSourceBench = null; // { teamKey, playerIndex }
 
 function _renderTeamTab(teamKey) {
   const team = _teamData[teamKey];
-  const pitch = document.getElementById('teamPitch');
+  const pitchId = teamKey === 'home' ? 'teamPitch' : 'teamPitchAway';
+  const pitch = document.getElementById(pitchId);
   if (!pitch) return;
 
   // Clear existing player nodes
@@ -2359,14 +2360,20 @@ function _renderRoster(teamKey) {
     benchEl.innerHTML = team.bench.map((p, idx) => `
       <div class="roster-row roster-row--bench" draggable="true"
            data-team-key="${teamKey}" data-bench-idx="${idx}">
-        <span class="roster-row__drag">⠿</span>
-        <span class="roster-row__badge"
-              style="${teamKey==='away' ? 'background:#991b1b' : ''}">${p.num}</span>
-        <span class="roster-row__name">${p.name}</span>
-        <span class="roster-row__pos">${p.pos}</span>
+        <div class="roster-row__drag">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#d1d5db"/><circle cx="6" cy="2" r="1.5" fill="#d1d5db"/><circle cx="2" cy="7" r="1.5" fill="#d1d5db"/><circle cx="6" cy="7" r="1.5" fill="#d1d5db"/><circle cx="2" cy="12" r="1.5" fill="#d1d5db"/><circle cx="6" cy="12" r="1.5" fill="#d1d5db"/></svg>
+        </div>
+        <div class="roster-row__avatar">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 14c0-2.4-2.4-4.3-5.3-4.3S2.7 11.6 2.7 14" stroke="#9ca3af" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="5" r="2.7" stroke="#9ca3af" stroke-width="1.3"/></svg>
+        </div>
+        <div class="roster-row__num-badge">${p.num}</div>
+        <div class="roster-row__info">
+          <span class="roster-row__name">${p.name}</span>
+          <span class="roster-row__pos">${p.pos}</span>
+        </div>
         <button class="roster-row__edit" data-ep-team="${teamKey}" data-ep-type="bench" data-ep-idx="${idx}"
                 title="Edit player">
-          <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M11 2l3 3-9 9H2v-3L11 2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M11 2l3 3-9 9H2v-3L11 2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
     `).join('');
