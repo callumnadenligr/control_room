@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIGR Control Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== TOP NAVIGATION BAR ===== -->
+<header class="top-nav">
+  <div class="top-nav__container">
+    <div class="top-nav__left">
+      <div class="ligr-logo">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_logo)">
+            <path d="M19.1914 4.89131L21.5633 0L28.1402 5.97826L28.5714 2.60871L35.4717 12.8261L27.7089 9.02173L22.7493 10.9783L21.2399 14.2391L26.5229 16.5217L22.5337 23.6957L24.3665 26.0869L18.7601 30.1087L16.3881 38.3696L14.3561 33.5039L5.92991 40L9.59567 29.4565L1.72505 35.5435L5.39089 24.4565L0 27.9348L7.00807 17.9348L0.539081 19.5652L12.5067 10.2173L2.91105 11.7391L15.849 6.30437L12.1833 3.91309L19.1914 4.89131Z" fill="#101828"/>
+            <path d="M19.1914 4.89131L21.5633 0L28.1402 5.97826L28.5714 2.60871L35.4717 12.8261L27.7089 9.02173L22.7493 10.9783L21.2399 14.2391L26.5229 16.5217L22.5337 23.6957L24.3665 26.0869L18.7601 30.1087L16.3881 38.3696L14.3561 33.5039L5.92991 40L9.59567 29.4565L1.72505 35.5435L5.39089 24.4565L0 27.9348L7.00807 17.9348L0.539081 19.5652L12.5067 10.2173L2.91105 11.7391L15.849 6.30437L12.1833 3.91309L19.1914 4.89131Z" fill="url(#paint0_logo)"/>
+            <path d="M24.3665 26.087L28.1401 23.3696L34.2325 26.5155L38.9218 25.9783L36.9811 27.9348L33.5309 27.3914V33.3696L37.5201 39.5652L33.5309 37.6087L18.76 30.1087L24.3665 26.087Z" fill="#101828"/>
+            <path d="M24.3665 26.087L28.1401 23.3696L34.2325 26.5155L38.9218 25.9783L36.9811 27.9348L33.5309 27.3914V33.3696L37.5201 39.5652L33.5309 37.6087L18.76 30.1087L24.3665 26.087Z" fill="url(#paint1_logo)"/>
+            <path d="M32.5608 14.239L33.5311 17.6085L32.1295 15.8695L27.709 14.239H32.5608Z" fill="#101828"/>
+            <path d="M32.5608 14.239L33.5311 17.6085L32.1295 15.8695L27.709 14.239H32.5608Z" fill="url(#paint2_logo)"/>
+            <path d="M36.8927 22.2922L39.1375 19.0218L36.9811 16.8479L40 17.8261L39.3531 21.85L39.0297 23.4783L32.1294 23.1522L36.8927 22.2922Z" fill="#101828"/>
+            <path d="M36.8927 22.2922L39.1375 19.0218L36.9811 16.8479L40 17.8261L39.3531 21.85L39.0297 23.4783L32.1294 23.1522L36.8927 22.2922Z" fill="url(#paint3_logo)"/>
+          </g>
+          <defs>
+            <linearGradient id="paint0_logo" x1="1.14286" y1="-4.65555e-07" x2="25.0245" y2="23.9532" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white" stop-opacity="0.4"/>
+              <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="paint1_logo" x1="1.1428" y1="3.02295e-05" x2="25.0245" y2="23.9532" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white" stop-opacity="0.4"/>
+              <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="paint2_logo" x1="1.14298" y1="-0.000123072" x2="25.0247" y2="23.9531" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white" stop-opacity="0.4"/>
+              <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="paint3_logo" x1="1.14285" y1="3.03416e-05" x2="25.0245" y2="23.9532" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white" stop-opacity="0.4"/>
+              <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+            <clipPath id="clip0_logo">
+              <rect width="40" height="40" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div class="top-nav__badges">
+        <div class="nav-lead-badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1l1.236 2.506L10 4.09 8 6.04l.472 2.751L6 7.506l-2.472 1.285L4 6.04 2 4.09l2.764-.584L6 1z" fill="white"/></svg>
+          Lead
+        </div>
+        <div class="overlay-status-bar" id="overlayStatusBar"></div>
+      </div>
+    </div>
+    <div class="top-nav__right">
+      <button class="nav-tab">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="11" height="11" rx="1.5" stroke="#344054" stroke-width="1.6"/><rect x="6" y="2" width="11" height="11" rx="1.5" stroke="#344054" stroke-width="1.6" fill="white"/></svg>
+        <span class="nav-tab__label">Production</span>
+      </button>
+      <button class="nav-tab">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="11" height="11" rx="1.5" stroke="#344054" stroke-width="1.6"/><rect x="6" y="2" width="11" height="11" rx="1.5" stroke="#344054" stroke-width="1.6" fill="white"/></svg>
+        <span class="nav-tab__label">Monitoring</span>
+      </button>
+      <button class="nav-toggle-btn" id="autoGfxToggle" title="Auto GFX: automatically push graphics to air when match events are triggered">
+        <span class="nav-toggle-btn__label">AUTO GFX</span>
+        <span class="toggle" id="autoGfxSwitch"><span class="toggle__thumb"></span></span>
+      </button>
+      <button class="nav-icon-btn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="5" y="1" width="10" height="18" rx="2.5" stroke="#344054" stroke-width="1.6" fill="none"/><rect x="8" y="2.5" width="4" height="1.2" rx="0.6" fill="#344054"/><circle cx="10" cy="16.8" r="0.9" fill="#344054"/></svg>
+      </button>
+      <button class="nav-icon-btn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="4" r="1.5" fill="#344054"/><circle cx="10" cy="10" r="1.5" fill="#344054"/><circle cx="10" cy="16" r="1.5" fill="#344054"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MATCH HEADER BAR ===== -->
+<div class="match-header">
+  <div class="match-header__container">
+    <div class="match-header__competition">
+      <div class="competition-icon">
+        <img src="https://www.figma.com/api/mcp/asset/6a281a7b-8bff-4af5-811a-0e50e698b205" alt="" width="48" height="48" onerror="this.parentElement.innerHTML='<svg width=32 height=32 viewBox=\'0 0 32 32\' fill=none><rect width=32 height=32 rx=6 fill=#f0f0f0/><path d=\'M8 6h16v10a8 8 0 01-16 0V6z\' fill=#e5e5e5 stroke=#ccc stroke-width=1/></svg>'"/>
+      </div>
+      <div class="competition-text">
+        <p class="competition-text__name">Aus Soccer Competition</p>
+        <p class="competition-text__venue">AAMI Stadium, Melbourne</p>
+      </div>
+    </div>
+
+    <div class="match-scoreboard">
+      <div class="scoreboard__team scoreboard__team--home">
+        <span class="scoreboard__team-name">MELBOURNE DRAGONS</span>
+        <div class="scoreboard__avatar">
+          <img src="https://www.figma.com/api/mcp/asset/4f454f0d-dc2e-4ebe-96f9-1db3f2419c6f" alt="MEL" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="scoreboard__score-block"><span class="scoreboard__score">3</span></div>
+      <div class="scoreboard__status">
+        <span class="scoreboard__status-label">Live 2nd Half</span>
+        <span class="scoreboard__clock" id="matchClock">89:02</span>
+      </div>
+      <div class="scoreboard__score-block"><span class="scoreboard__score">1</span></div>
+      <div class="scoreboard__team scoreboard__team--away">
+        <div class="scoreboard__avatar">
+          <img src="https://www.figma.com/api/mcp/asset/9e050276-ee78-4f85-a09a-10b6bfed0210" alt="SYD" onerror="this.style.display='none'"/>
+        </div>
+        <span class="scoreboard__team-name">SYDNEY SHARKS</span>
+      </div>
+    </div>
+
+    <div class="match-header__actions">
+      <span class="badge badge--live"><span class="badge__dot badge__dot--live"></span>1 Live</span>
+      <button class="btn btn--secondary btn--clear-all" id="clearAllBtn" title="Hold to clear all graphics">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#344054" stroke-width="1.8"/><path d="M7 7l6 6M13 7l-6 6" stroke="#344054" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Clear All
+      </button>
+      <button class="btn btn--to-air" id="headerToAirBtn" style="display:none">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+        To Air
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="main-layout" id="mainLayout">
+
+  <!-- ===== LEFT SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__inner">
+
+      <div class="sidebar-nav" id="sidebarNav">
+
+        <!-- SCORE SECTION -->
+        <div class="sidebar-section">
+          <div class="sidebar-section__header" data-section="score">
+            <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 3h12v8a6 6 0 01-12 0V3z" stroke="#667085" stroke-width="1.5"/><path d="M4 5H2v2a2 2 0 002 2M16 5h2v2a2 2 0 01-2 2" stroke="#667085" stroke-width="1.5" fill="none"/><rect x="8" y="14" width="4" height="2" fill="#667085"/><rect x="6" y="16" width="8" height="2" rx="1" fill="#667085"/></svg>
+            <span class="sidebar-section__title">Score</span>
+            <svg class="sidebar-section__chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="sidebar-section__body" id="scoreBody">
+            <div class="score-controls">
+              <div class="score-control">
+                <div class="number-input">
+                  <button class="number-input__btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10" stroke="#344054" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+                  <div class="number-input__field"><span class="number-input__value" id="scoreHome">3</span></div>
+                  <button class="number-input__btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="#344054" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+                </div>
+                <span class="score-control__label">Melbourne</span>
+              </div>
+              <div class="score-control">
+                <div class="number-input">
+                  <button class="number-input__btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10" stroke="#344054" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+                  <div class="number-input__field"><span class="number-input__value" id="scoreAway">1</span></div>
+                  <button class="number-input__btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="#344054" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+                </div>
+                <span class="score-control__label">Sydney</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- CLOCK SECTION -->
+        <div class="sidebar-section">
+          <div class="sidebar-section__header" data-section="clock">
+            <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="11" r="7" stroke="#667085" stroke-width="1.5"/><path d="M10 7v4l3 2" stroke="#667085" stroke-width="1.5" stroke-linecap="round"/><path d="M7.5 2.5h5M10 2.5v2" stroke="#667085" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="sidebar-section__title">Clock</span>
+            <svg class="sidebar-section__chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="sidebar-section__body" id="clockBody">
+            <div class="clock-controls">
+              <div class="clock-row">
+                <button class="clock-btn-sm" id="clockDecrBtn">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#344054" stroke-width="1.5"/><path d="M6 10h8" stroke="#344054" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+                <div class="clock-display" id="clockDisplay" title="Click to start / stop">
+                  <span class="clock-display__indicator"></span>
+                  <span class="clock-display__value" id="clockValue" title="Click to edit time">89:02</span>
+                </div>
+                <button class="clock-btn-sm" id="clockIncrBtn" title="+1 minute">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#344054" stroke-width="1.5"/><path d="M6 10h8M10 6v8" stroke="#344054" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+              <div class="clock-quick-btns">
+                <button class="quick-btn" data-value="1st">1st</button>
+                <button class="quick-btn" data-value="HT">HT</button>
+                <button class="quick-btn quick-btn--active" data-value="2nd">2nd</button>
+                <button class="quick-btn" data-value="FT">FT</button>
+                <button class="quick-btn" data-value="ET">ET</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- QUICK EVENTS SECTION -->
+        <div class="sidebar-section">
+          <div class="sidebar-section__header" data-section="quickEvents">
+            <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 2L3 12h7l-3 6 10-10h-7z" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            <span class="sidebar-section__title">Quick Events</span>
+            <svg class="sidebar-section__chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="sidebar-section__body" id="quickEventsBody">
+            <div class="team-tabs" id="teamTabs">
+              <button class="team-tab" data-team="melbourne">Melbourne</button>
+              <button class="team-tab team-tab--active" data-team="sydney">Sydney</button>
+            </div>
+            <div class="event-buttons">
+              <button class="event-btn event-btn--goal">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M13 2L3 12h7l-3 6 10-10h-7z" stroke="#027a48" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                Goal
+              </button>
+              <button class="event-btn event-btn--yellow">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 3h10l-4 7h6L5 18l4-7H3z" stroke="#854d0e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Yellow
+              </button>
+              <button class="event-btn event-btn--red">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 3h10l-4 7h6L5 18l4-7H3z" stroke="#991b1b" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Red
+              </button>
+              <button class="event-btn event-btn--sub">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M5 8l-3 2 3 2M15 8l3 2-3 2M2 10h16" stroke="#1570ef" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Sub
+              </button>
+              <button class="event-btn event-btn--penalty">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="5" r="3" stroke="#6941c6" stroke-width="1.5"/><path d="M4 17v-2a6 6 0 0112 0v2" stroke="#6941c6" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Penalty
+              </button>
+              <button class="event-btn event-btn--injury">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#c4320a" stroke-width="1.5"/><path d="M10 6v4M10 14v.5" stroke="#c4320a" stroke-width="1.8" stroke-linecap="round"/></svg>
+                Injury +
+              </button>
+              <button class="event-btn event-btn--var">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M2 10c0 1 1.5 2.5 2.5 3s2 .5 3 0l1-1 1 1c1 .5 2 .5 3 0S18 11 18 10M2 10c0-1 1.5-2.5 2.5-3s2-.5 3 0l1 1 1-1c1-.5 2-.5 3 0S18 9 18 10" stroke="#6941c6" stroke-width="1.5" fill="none"/></svg>
+                VAR
+              </button>
+            </div>
+            <div class="event-buttons-divider"><span class="event-buttons-divider__label">Period</span></div>
+            <div class="period-buttons">
+              <button class="event-btn event-btn--ht">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#1570ef" stroke-width="1.5"/><path d="M10 6v8M7 10h6" stroke="#1570ef" stroke-width="1.5" stroke-linecap="round"/></svg>
+                HT
+              </button>
+              <button class="event-btn event-btn--ft">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#1570ef" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="#1570ef" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                FT
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- MATCH EVENTS SECTION -->
+        <div class="sidebar-section">
+          <div class="sidebar-section__header" data-section="matchEvents">
+            <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10c0 1.5 2 3 4 3s3-1 4-3-2-3-4-3-4 1.5-4 3zM10 10c0 1.5 2 3 4 3s4-1.5 4-3-2-3-4-3-4 1.5-4 3z" stroke="#667085" stroke-width="1.3" fill="none"/></svg>
+            <span class="sidebar-section__title">Match Events</span>
+            <span class="sidebar-badge">10 events</span>
+            <svg class="sidebar-section__chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="sidebar-section__body" id="matchEventsBody">
+            <div class="match-events-list" id="matchEventsList">
+              <div class="match-event" data-event-time="53" data-event-type="Goal" data-event-player="#9 Marcus Lee" data-event-team="MEL" data-dot-class="match-event__dot--goal" data-type-class="match-event__type--goal"><span class="match-event__time">53'</span><span class="match-event__dot match-event__dot--goal"></span><span class="match-event__type match-event__type--goal">Goal</span><span class="match-event__player">#9 Marcus Lee</span><span class="match-event__team match-event__team--mel">MEL</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+              <div class="match-event" data-event-time="47" data-event-type="Yellow Card" data-event-player="#4 Sam Robinson" data-event-team="SYD" data-dot-class="match-event__dot--yellow" data-type-class="match-event__type--yellow"><span class="match-event__time">47'</span><span class="match-event__dot match-event__dot--yellow"></span><span class="match-event__type match-event__type--yellow">Yellow Card</span><span class="match-event__player">#4 Sam Robinson</span><span class="match-event__team match-event__team--syd">SYD</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+              <div class="match-event" data-event-time="45+2" data-event-type="Free Kick" data-event-player="#11 Ethan Rogers" data-event-team="SYD" data-dot-class="" data-type-class=""><span class="match-event__time">45+2'</span><span class="match-event__dot"></span><span class="match-event__type">Free Kick</span><span class="match-event__player">#11 Ethan Rogers</span><span class="match-event__team match-event__team--syd">SYD</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+              <div class="match-event" data-event-time="42" data-event-type="Substitution" data-event-player="#15 ⇄ #8" data-event-team="SYD" data-dot-class="match-event__dot--blue" data-type-class="match-event__type--blue"><span class="match-event__time">42'</span><span class="match-event__dot match-event__dot--blue"></span><span class="match-event__type match-event__type--blue">Substitution</span><span class="match-event__player">#15 ⇄ #8</span><span class="match-event__team match-event__team--syd">SYD</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+              <div class="match-event" data-event-time="40" data-event-type="Goal" data-event-player="#10 Callum Naden" data-event-team="MEL" data-dot-class="match-event__dot--goal" data-type-class="match-event__type--goal"><span class="match-event__time">40'</span><span class="match-event__dot match-event__dot--goal"></span><span class="match-event__type match-event__type--goal">Goal</span><span class="match-event__player">#10 Callum Naden</span><span class="match-event__team match-event__team--mel">MEL</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+              <div class="match-event" data-event-time="39" data-event-type="Substitution" data-event-player="#18 ⇄ #8" data-event-team="MEL" data-dot-class="match-event__dot--blue" data-type-class="match-event__type--blue"><span class="match-event__time">39'</span><span class="match-event__dot match-event__dot--blue"></span><span class="match-event__type match-event__type--blue">Substitution</span><span class="match-event__player">#18 ⇄ #8</span><span class="match-event__team match-event__team--mel">MEL</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+              <div class="match-event" data-event-time="37" data-event-type="Corner Kick" data-event-player="#7 Liam Hughes" data-event-team="MEL" data-dot-class="" data-type-class=""><span class="match-event__time">37'</span><span class="match-event__dot"></span><span class="match-event__type">Corner Kick</span><span class="match-event__player">#7 Liam Hughes</span><span class="match-event__team match-event__team--mel">MEL</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+              <div class="match-event" data-event-time="24" data-event-type="Goal" data-event-player="#4 Sam Robinson" data-event-team="SYD" data-dot-class="match-event__dot--goal" data-type-class="match-event__type--goal"><span class="match-event__time">24'</span><span class="match-event__dot match-event__dot--goal"></span><span class="match-event__type match-event__type--goal">Goal</span><span class="match-event__player">#4 Sam Robinson</span><span class="match-event__team match-event__team--syd">SYD</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT AREA ===== -->
+  <main class="content-area" id="contentArea">
+
+    <!-- Content Top Bar -->
+    <div class="content-topbar">
+      <div class="content-type-tabs" id="contentTypeTabs">
+        <button class="content-type-tab content-type-tab--active" data-tab="graphics">Graphics</button>
+        <button class="content-type-tab" data-tab="media">Media</button>
+        <button class="content-type-tab" data-tab="data">Data</button>
+        <button class="content-type-tab" data-tab="overlays">Overlays</button>
+      </div>
+      <div class="content-topbar__actions">
+        <div class="search-input" id="searchInputWrapper">
+          <svg class="search-input__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#737373" stroke-width="1.5"/><path d="M11 11l3 3" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input type="text" class="search-input__field" id="contentSearchField" placeholder="Search" />
+          <button class="search-input__clear" id="searchClearBtn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <span class="search-input__shortcut">⌘K</span>
+        </div>
+        <button class="btn btn--secondary btn--sm btn--preview-url" id="previewUrlBtn">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M8 4H5a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-3M11 3h6m0 0v6m0-6L9 11" stroke="#344054" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          PREVIEW
+        </button>
+      </div>
+    </div>
+
+    <div class="content-pane" id="paneGraphics" data-pane="graphics">
+    <!-- Category Tabs Bar -->
+    <div class="category-tabs-bar">
+      <div class="category-tabs" id="tabBar">
+        <button class="category-tab category-tab--active" data-tab-id="tab-pre-match">
+          <span class="category-tab__label">Default</span>
+          <span class="category-tab__close" role="button" tabindex="-1" title="Remove tab"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M8 2 2 8M2 2l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <button class="category-tab category-tab--add" id="addTabBtn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="#667085" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Tab
+        </button>
+      </div>
+      <button class="btn btn--secondary btn--sm btn--add-graphic">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="#344054" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Add Graphic
+      </button>
+    </div>
+
+    <!-- Graphics Content -->
+    <div class="graphics-content" id="graphicsContent">
+
+      <!-- GROUP 1 -->
+      <div class="graphic-group" data-tab="tab-pre-match">
+        <div class="group-header">
+          <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+          <button class="group-header__collapse" data-group="g1">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="group-header__info">
+            <span class="group-header__name">Group Name</span>
+            <span class="group-header__meta">3 Graphics • 2 Extensions</span>
+          </div>
+          <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
+        </div>
+
+        <div class="group-cards" id="g1-cards">
+
+          <!-- Card: DEFAULT -->
+          <div class="graphic-card graphic-card--default" data-card-id="card-match-id">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Match ID (Full Screen)</span></div>
+                <p class="graphic-card__meta">2 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-match-id" data-name="Match ID (Full Screen)" data-vars="4" title="Edit variables">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
+                </button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: DEFAULT (with extensions) -->
+          <div class="graphic-card graphic-card--default" data-card-id="card-preview">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row">
+                  <span class="graphic-card__name">Match ID (Full Screen)</span>
+                </div>
+                <p class="graphic-card__meta">2 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-preview" data-name="Match ID (Full Screen)" data-vars="2" title="Edit variables">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
+                </button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+            <!-- Extensions (nested inside parent card boundary) -->
+            <div class="graphic-card__extensions">
+              <div class="graphic-card__extension graphic-card--default" data-card-id="card-sub1">
+                <div class="graphic-card__inner graphic-card__inner--sm">
+                  <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                  <div class="graphic-card__thumbnail graphic-card__thumbnail--sm"></div>
+                  <div class="graphic-card__info">
+                    <div class="graphic-card__title-row"><span class="graphic-card__name">Graphic Name Example</span><span class="badge badge--blue-gray">Badge</span></div>
+                    <p class="graphic-card__meta">Secondary Information</p>
+                  </div>
+                  <div class="graphic-card__actions">
+                    <button class="btn-icon btn-icon--edit" data-card="card-sub1" data-name="Graphic Name Example" data-vars="2" title="Edit variables">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
+                    </button>
+                    <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                    <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                  </div>
+                </div>
+              </div>
+              <div class="graphic-card__extension graphic-card--default" data-card-id="card-sub2">
+                <div class="graphic-card__inner graphic-card__inner--sm">
+                  <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                  <div class="graphic-card__thumbnail graphic-card__thumbnail--sm"></div>
+                  <div class="graphic-card__info">
+                    <div class="graphic-card__title-row"><span class="graphic-card__name">Graphic Name Example</span><span class="badge badge--blue-gray">Badge</span></div>
+                    <p class="graphic-card__meta">Secondary Information</p>
+                  </div>
+                  <div class="graphic-card__actions">
+                    <button class="btn-icon btn-icon--edit" data-card="card-sub2" data-name="Graphic Name Example" data-vars="2" title="Edit variables">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
+                    </button>
+                    <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                    <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: DEFAULT hover state -->
+          <div class="graphic-card graphic-card--default" data-card-id="card-lineup">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Lineup &amp; Info</span><span class="badge badge--blue-gray">Badge</span></div>
+                <p class="graphic-card__meta">2 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-lineup" data-name="Lineup &amp; Info" data-vars="2" title="Edit variables">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
+                </button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: DEFAULT -->
+          <div class="graphic-card graphic-card--default" data-card-id="card-selected">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail graphic-card__thumbnail--preview">
+                <img src="https://www.figma.com/api/mcp/asset/a5c381a2-ac74-47e6-8bad-39713e8aea9d" alt="Match ID preview" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" onerror="this.style.display='none'"/>
+              </div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Match ID (Full Screen)</span></div>
+                <p class="graphic-card__meta">4 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-selected" data-name="Match ID (Full Screen)" data-vars="4" title="Edit variables">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
+                </button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GROUP 2 -->
+      <div class="graphic-group" data-tab="tab-pre-match">
+        <div class="group-header">
+          <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+          <button class="group-header__collapse" data-group="g2">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="group-header__info">
+            <span class="group-header__name">Group Name</span>
+            <span class="group-header__meta">3 Graphics • 2 Extensions</span>
+          </div>
+          <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
+        </div>
+        <div class="group-cards" id="g2-cards">
+          <div class="graphic-card graphic-card--default" data-card-id="card-g2-1">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Graphic Name Example</span><span class="badge badge--blue-gray">Badge</span></div>
+                <p class="graphic-card__meta">2 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-g2-1" data-name="Graphic Name Example" data-vars="2" title="Edit variables">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
+                </button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-g2-2">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Graphic Name Example</span><span class="badge badge--blue-gray">Badge</span></div>
+                <p class="graphic-card__meta">Secondary Information</p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-g2-2" data-name="Graphic Name Example" data-vars="3" title="Edit variables">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
+                </button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty state: shown when active tab has no graphics -->
+      <div class="graphics-empty-state" id="graphicsEmptyState">
+        <div class="graphics-empty-state__icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12"/></svg>
+        </div>
+        <p class="graphics-empty-state__title">No graphics in this tab</p>
+        <p class="graphics-empty-state__subtitle">Add a graphic to get started</p>
+        <button class="btn btn--secondary btn--sm btn--add-graphic">+ Add Graphic</button>
+      </div>
+
+    </div><!-- /graphics-content -->
+    </div><!-- /paneGraphics -->
+
+    <!-- ===== MEDIA PANE ===== -->
+    <div class="content-pane content-pane--hidden" id="paneMedia" data-pane="media">
+      <div class="category-tabs-bar">
+        <div class="category-tabs" id="mediaTabBar">
+          <button class="category-tab category-tab--active" data-media-tab-id="media-tab-pre-match">
+            <span class="category-tab__label">Default</span>
+            <span class="category-tab__close" role="button" tabindex="-1" title="Remove tab"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M8 2 2 8M2 2l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <button class="category-tab category-tab--add" id="addMediaTabBtn">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="#667085" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Tab
+          </button>
+        </div>
+        <button class="btn btn--secondary btn--sm" id="addMediaBtn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="#344054" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Add Media
+        </button>
+      </div>
+
+      <div class="graphics-content" id="mediaContent">
+        <div class="graphic-group media-group" data-media-tab="media-tab-pre-match">
+          <div class="group-header">
+            <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+            <button class="group-header__collapse" data-group="mg1">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="group-header__info">
+              <span class="group-header__name">Group Name</span>
+              <span class="group-header__meta">3 Media</span>
+            </div>
+            <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
+          </div>
+          <div class="group-cards" id="mg1-cards">
+
+            <!-- Media card: DEFAULT -->
+            <div class="graphic-card graphic-card--default" data-card-id="media-card-1" data-card-type="media">
+              <div class="graphic-card__inner">
+                <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                <div class="graphic-card__thumbnail media-card__thumbnail"></div>
+                <div class="graphic-card__info">
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Video_Name_Example.mp4</span></div>
+                  <p class="graphic-card__meta">MP4 <span class="meta-dot">•</span> 2:30 mins</p>
+                </div>
+                <div class="graphic-card__actions">
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-1" data-name="Video_Name_Example.mp4" data-vars="0" data-card-type="media" title="Edit media">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg>
+                  </button>
+                  <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                  <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Media card: DEFAULT -->
+            <div class="graphic-card graphic-card--default" data-card-id="media-card-2" data-card-type="media">
+              <div class="graphic-card__inner">
+                <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                <div class="graphic-card__thumbnail media-card__thumbnail"></div>
+                <div class="graphic-card__info">
+                  <div class="graphic-card__title-row">
+                    <span class="graphic-card__name">Media Name Example</span>
+                  </div>
+                  <p class="graphic-card__meta">MP4 <span class="meta-dot">•</span> 2:30 mins</p>
+                </div>
+                <div class="graphic-card__actions">
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-2" data-name="Media Name Example" data-vars="0" data-card-type="media" title="Edit media">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg>
+                  </button>
+                  <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                  <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Media card: DEFAULT -->
+            <div class="graphic-card graphic-card--default" data-card-id="media-card-3" data-card-type="media">
+              <div class="graphic-card__inner">
+                <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                <div class="graphic-card__thumbnail media-card__thumbnail"></div>
+                <div class="graphic-card__info">
+                  <div class="graphic-card__title-row">
+                    <span class="graphic-card__name">Media Name Example</span>
+                    <span class="badge badge--blue-gray">Badge</span>
+                  </div>
+                  <p class="graphic-card__meta">PNG <span class="meta-dot">•</span> More Info</p>
+                </div>
+                <div class="graphic-card__actions">
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-3" data-name="Media Name Example" data-vars="0" data-card-type="media" title="Edit media">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg>
+                  </button>
+                  <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                  <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="graphics-empty-state" id="mediaEmptyState" style="display:none">
+          <div class="graphics-empty-state__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" stroke-width="1.5"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M8 6V4a1 1 0 011-1h6a1 1 0 011 1v2M10 11l5 3-5 3V11z"/></svg>
+          </div>
+          <p class="graphics-empty-state__title">No media in this tab</p>
+          <p class="graphics-empty-state__subtitle">Add media to get started</p>
+          <button class="btn btn--secondary btn--sm" id="addMediaBtnEmpty">+ Add Media</button>
+        </div>
+      </div>
+    </div><!-- /paneMedia -->
+
+    <!-- ===== DATA PANE ===== -->
+    <div class="content-pane content-pane--hidden" id="paneData" data-pane="data">
+      <div class="data-sub-tabs-bar">
+        <button class="data-sub-tab data-sub-tab--active" data-data-tab="match">Match</button>
+        <button class="data-sub-tab" data-data-tab="team">Team</button>
+        <button class="data-sub-tab" data-data-tab="event">Event</button>
+        <button class="data-sub-tab" data-data-tab="stats">Stats</button>
+        <button class="data-sub-tab" data-data-tab="table">Table</button>
+      </div>
+
+      <div class="data-content">
+        <!-- Match sub-tab -->
+        <div class="data-sub-panel" id="dataSubMatch" data-data-panel="match">
+          <div class="data-form">
+
+            <div class="data-form__row">
+              <label class="data-form__label">Date &amp; Time <span class="data-form__required">*</span></label>
+              <div class="data-form__controls data-form__controls--row">
+                <div class="data-form__select-wrap">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#667085" stroke-width="1.4"/><path d="M8 5v3l2 2" stroke="#667085" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  <select class="data-form__select">
+                    <option>19 March 2025</option>
+                  </select>
+                </div>
+                <div class="data-form__select-wrap">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#667085" stroke-width="1.4"/><path d="M8 5v3l2 2" stroke="#667085" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  <select class="data-form__select">
+                    <option>3:00 PM</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-form__row">
+              <label class="data-form__label">Location</label>
+              <div class="data-form__controls">
+                <div class="data-form__select-wrap data-form__select-wrap--full">
+                  <span class="data-form__flag">🇦🇺</span>
+                  <select class="data-form__select">
+                    <option>Australia, Melbourne</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-form__row">
+              <label class="data-form__label">Competition</label>
+              <div class="data-form__controls">
+                <input class="data-form__input" type="text" value="Aus Soccer Competition" />
+              </div>
+            </div>
+
+            <div class="data-form__row">
+              <label class="data-form__label">Venue</label>
+              <div class="data-form__controls">
+                <input class="data-form__input" type="text" value="AAMI Stadium" />
+              </div>
+            </div>
+
+            <div class="data-form__row">
+              <label class="data-form__label">Referee <span class="data-form__required">*</span></label>
+              <div class="data-form__controls">
+                <input class="data-form__input" type="text" value="Mario Perri" />
+              </div>
+            </div>
+
+            <div class="data-form__row">
+              <label class="data-form__label">Assistant <span class="data-form__required">*</span></label>
+              <div class="data-form__controls">
+                <input class="data-form__input" type="text" value="Stefano Alassio" />
+              </div>
+            </div>
+
+            <div class="data-form__row">
+              <label class="data-form__label">Name <span class="data-form__required">*</span></label>
+              <div class="data-form__controls">
+                <input class="data-form__input" type="text" value="Daniele Bindoni" />
+              </div>
+            </div>
+
+            <div class="data-form__row">
+              <label class="data-form__label">Name <span class="data-form__required">*</span></label>
+              <div class="data-form__controls">
+                <input class="data-form__input" type="text" value="Alessandro Costanzo" />
+              </div>
+            </div>
+
+            <div class="data-form__row">
+              <label class="data-form__label">Temperature</label>
+              <div class="data-form__controls">
+                <input class="data-form__input" type="text" value="24°C | 75°F" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== TEAM SUB-PANEL ===== -->
+        <div class="data-sub-panel data-sub-panel--hidden team-sub-panel" id="dataSubTeam" data-data-panel="team">
+          <div class="team-panel">
+            <!-- Home / Away tab switcher -->
+            <div class="team-tabs-bar">
+              <button class="team-tab team-tab--active" data-team-tab="home">Home</button>
+              <button class="team-tab" data-team-tab="away">Away</button>
+            </div>
+
+            <div class="team-layout">
+              <!-- Left: Pitch -->
+              <div class="pitch-wrap">
+                <div class="pitch" id="teamPitch">
+                  <div class="pitch__half-line"></div>
+                  <div class="pitch__centre-circle"></div>
+                  <div class="pitch__centre-dot"></div>
+                  <div class="pitch__area pitch__area--top"></div>
+                  <div class="pitch__goal pitch__goal--top"></div>
+                  <div class="pitch__area pitch__area--bottom"></div>
+                  <div class="pitch__goal pitch__goal--bottom"></div>
+                  <!-- Players injected by JS -->
+                </div>
+              </div>
+
+              <!-- Right: Roster -->
+              <div class="team-roster">
+                <div class="roster-pane" id="rosterPaneHome">
+                  <div class="roster-section">
+                    <div class="roster-section__head">
+                      <span class="roster-section__title">Starting XI</span>
+                    </div>
+                    <div class="roster-rows" id="startingXiHome"></div>
+                  </div>
+                  <div class="roster-section roster-section--bench">
+                    <div class="roster-section__head">
+                      <span class="roster-section__title">Bench</span>
+                      <span class="roster-section__hint">Drag to pitch to swap</span>
+                    </div>
+                    <div class="roster-rows roster-rows--bench" id="benchHome"></div>
+                  </div>
+                </div>
+
+                <div class="roster-pane roster-pane--hidden" id="rosterPaneAway">
+                  <div class="roster-section">
+                    <div class="roster-section__head">
+                      <span class="roster-section__title">Starting XI</span>
+                    </div>
+                    <div class="roster-rows" id="startingXiAway"></div>
+                  </div>
+                  <div class="roster-section roster-section--bench">
+                    <div class="roster-section__head">
+                      <span class="roster-section__title">Bench</span>
+                      <span class="roster-section__hint">Drag to pitch to swap</span>
+                    </div>
+                    <div class="roster-rows roster-rows--bench" id="benchAway"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-sub-panel data-sub-panel--hidden" id="dataSubEvent" data-data-panel="event">
+          <div class="data-placeholder"><p>Event data editor coming soon.</p></div>
+        </div>
+
+        <!-- ===== STATS SUB-PANEL ===== -->
+        <div class="data-sub-panel data-sub-panel--hidden stats-sub-panel" id="dataSubStats" data-data-panel="stats">
+          <div class="stats-cat-bar">
+            <button class="stats-cat stats-cat--active" data-stats-cat="top">Top</button>
+            <button class="stats-cat" data-stats-cat="shots">Shots</button>
+            <button class="stats-cat" data-stats-cat="passes">Passes</button>
+            <button class="stats-cat" data-stats-cat="defence">Defence</button>
+            <button class="stats-cat" data-stats-cat="duels">Duels</button>
+            <button class="stats-cat" data-stats-cat="xg">xG</button>
+            <button class="stats-cat" data-stats-cat="discipline">Discipline</button>
+          </div>
+          <div class="stats-body" id="statsBody"></div>
+        </div>
+        <div class="data-sub-panel data-sub-panel--hidden" id="dataSubTable" data-data-panel="table">
+          <div class="data-placeholder"><p>Table editor coming soon.</p></div>
+        </div>
+      </div>
+    </div><!-- /paneData -->
+
+    <!-- ===== OVERLAYS PANE ===== -->
+    <div class="content-pane content-pane--hidden" id="paneOverlays" data-pane="overlays">
+      <div class="overlays-content">
+        <div class="overlays-section">
+          <h2 class="overlays-section__title">Available Overlays</h2>
+          <div class="overlays-table">
+            <div class="overlays-table__header">
+              <span class="overlays-table__col overlays-table__col--overlay">Overlay</span>
+              <span class="overlays-table__col overlays-table__col--data">Data</span>
+              <span class="overlays-table__col overlays-table__col--stream">Stream</span>
+            </div>
+
+            <div class="overlay-row">
+              <div class="overlay-row__overlay">
+                <div class="overlay-row__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div class="overlay-row__overlay-info">
+                  <span class="overlay-row__name">Overlay Name Example</span>
+                  <span class="overlay-row__theme">Theme Name</span>
+                </div>
+              </div>
+              <div class="overlay-row__data">
+                <span class="badge badge--blue-gray">EXT Data</span>
+              </div>
+              <div class="overlay-row__stream">
+                <div class="overlay-row__stream-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" stroke-width="1.5"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+                </div>
+                <div class="overlay-row__stream-info">
+                  <span class="overlay-row__stream-name">Stream Name Example</span>
+                  <span class="overlay-row__stream-meta">4K • 60FPS</span>
+                </div>
+              </div>
+              <div class="overlay-row__control">
+                <button class="overlay-toggle overlay-toggle--on" data-overlay-id="ov1">
+                  <span class="toggle__thumb"></span>
+                </button>
+                <span class="overlay-row__control-label">Control</span>
+              </div>
+            </div>
+
+            <div class="overlay-row">
+              <div class="overlay-row__overlay">
+                <div class="overlay-row__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div class="overlay-row__overlay-info">
+                  <span class="overlay-row__name">Overlay Name Example</span>
+                  <span class="overlay-row__theme">Theme Name</span>
+                </div>
+              </div>
+              <div class="overlay-row__data">
+                <span class="badge badge--blue-gray">EXT Data</span>
+              </div>
+              <div class="overlay-row__stream">
+                <div class="overlay-row__stream-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" stroke-width="1.5"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+                </div>
+                <div class="overlay-row__stream-info">
+                  <span class="overlay-row__stream-name">Stream Name Example</span>
+                  <span class="overlay-row__stream-meta">4K • 60FPS</span>
+                </div>
+              </div>
+              <div class="overlay-row__control">
+                <button class="overlay-toggle overlay-toggle--on" data-overlay-id="ov2">
+                  <span class="toggle__thumb"></span>
+                </button>
+                <span class="overlay-row__control-label">Control</span>
+              </div>
+            </div>
+
+            <div class="overlay-row">
+              <div class="overlay-row__overlay">
+                <div class="overlay-row__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div class="overlay-row__overlay-info">
+                  <span class="overlay-row__name">Overlay Name Example</span>
+                  <span class="overlay-row__theme">Theme Name</span>
+                </div>
+              </div>
+              <div class="overlay-row__data">
+                <span class="badge badge--blue-gray">EXT Data</span>
+              </div>
+              <div class="overlay-row__stream">
+                <div class="overlay-row__stream-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" stroke-width="1.5"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+                </div>
+                <div class="overlay-row__stream-info">
+                  <span class="overlay-row__stream-name">Stream Name Example</span>
+                  <span class="overlay-row__stream-meta">4K • 60FPS</span>
+                </div>
+              </div>
+              <div class="overlay-row__control">
+                <button class="overlay-toggle overlay-toggle--on" data-overlay-id="ov3">
+                  <span class="toggle__thumb"></span>
+                </button>
+                <span class="overlay-row__control-label">Control</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- /paneOverlays -->
+
+    <!-- ===== SEARCH RESULTS PANE ===== -->
+    <div class="content-pane content-pane--hidden" id="paneSearch" data-pane="search">
+      <div class="search-results">
+        <div class="search-results__tab-bar">
+          <div class="search-results__tab search-results__tab--active">
+            <span id="searchTabLabel">All Results</span>
+            <div class="search-tab-badge" id="searchTabBadge">
+              <span class="search-tab-badge__dot"></span>
+              <span class="search-tab-badge__count">0</span>
+            </div>
+          </div>
+          <button class="event-filter-clear" id="eventFilterClear" style="display:none">
+            <span id="eventFilterLabel"></span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="search-results__body" id="searchResultsBody"></div>
+      </div>
+    </div>
+
+  </main><!-- /content-area -->
+
+  <!-- ===== SLIDE-OUT EDIT PANEL ===== -->
+  <aside class="edit-panel" id="editPanel">
+    <div class="edit-panel__inner">
+
+      <!-- Panel Header -->
+      <div class="edit-panel__header">
+        <!-- Hidden elements kept for JS data binding -->
+        <p id="panelTitle" style="display:none"></p>
+        <p id="panelSubtitle" style="display:none"></p>
+
+        <!-- Action buttons -->
+        <div class="edit-panel__action-btns">
+          <button class="btn btn--secondary btn--flex" id="panelLocalBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><rect x="10" y="8" width="1.5" height="8" rx="0.75" fill="currentColor" stroke="none"/><rect x="12.5" y="8" width="1.5" height="8" rx="0.75" fill="currentColor" stroke="none"/></svg>
+            Local
+          </button>
+          <button class="btn btn--secondary btn--flex" id="panelUrlBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+            Preview
+          </button>
+          <button class="btn btn--to-air-outline btn--flex" id="panelToAirBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+            To Air
+          </button>
+        </div>
+
+        <!-- Preview image -->
+        <div class="edit-panel__preview">
+          <img class="edit-panel__preview-img" id="panelPreviewImg"
+            src="https://www.figma.com/api/mcp/asset/a5c381a2-ac74-47e6-8bad-39713e8aea9d"
+            alt="Graphic preview"
+            onerror="this.parentElement.classList.add('edit-panel__preview--fallback')" />
+          <!-- Gradient overlay bar -->
+          <div class="edit-panel__preview-bar">
+            <div class="edit-panel__preview-bar__left">
+              <span class="preview-badge-local">
+                <span class="preview-badge-local__dot"></span>
+                Local
+              </span>
+            </div>
+            <button class="edit-panel__preview-maximize" id="panelMaximizeBtn" title="Fullscreen">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tab bar -->
+      <div class="edit-panel__tabs-bar">
+        <button class="edit-panel__tab edit-panel__tab--active" id="panelTabVars" data-tab="vars">Variables</button>
+        <button class="edit-panel__tab" id="panelTabDisplay" data-tab="display">Display</button>
+      </div>
+
+      <!-- Variables pane -->
+      <div class="edit-panel__tab-pane" id="panelVarsPane">
+        <!-- Media playback (media cards) -->
+        <div class="display-section" id="panelMediaPlayback" style="display:none">
+          <p class="display-section__label">Playback</p>
+          <div class="display-prop-row">
+            <span class="display-prop__label">Behind Graphics</span>
+            <button class="toggle toggle--sm" id="panelBehindGfxToggle"><span class="toggle__thumb"></span></button>
+          </div>
+          <div class="display-prop-row">
+            <div class="media-prop-slider-wrap">
+              <span class="display-prop__label">Volume</span>
+              <div class="media-prop-slider-row">
+                <input class="media-prop__slider" type="range" min="0" max="100" value="100" id="panelVolumeSlider" />
+                <span class="media-prop__slider-value" id="panelVolumeValue">100%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Variable fields (graphics cards) -->
+        <div class="edit-panel__variables" id="panelVariables">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Display pane -->
+      <div class="edit-panel__tab-pane" id="panelDisplayPane" style="display:none">
+        <!-- Size -->
+        <div class="display-section">
+          <p class="display-section__label">Size</p>
+          <div class="display-row">
+            <div class="display-input-wrap">
+              <input class="display-input" type="number" value="1920" id="panelSizeH" />
+              <span class="display-input__hint">H</span>
+            </div>
+            <button class="display-btn-icon" id="panelSizeLink" title="Lock aspect ratio">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+            <div class="display-input-wrap">
+              <input class="display-input" type="number" value="1080" id="panelSizeW" />
+              <span class="display-input__hint">W</span>
+            </div>
+          </div>
+        </div>
+        <!-- Position -->
+        <div class="display-section">
+          <p class="display-section__label">Position</p>
+          <div class="display-row">
+            <div class="display-input-wrap">
+              <input class="display-input" type="number" value="0" id="panelPosX" />
+              <span class="display-input__hint">X</span>
+            </div>
+            <div class="display-input-wrap">
+              <input class="display-input" type="number" value="0" id="panelPosY" />
+              <span class="display-input__hint">Y</span>
+            </div>
+          </div>
+          <div class="display-row display-row--mt">
+            <div class="display-input-wrap display-input-wrap--grow">
+              <input class="display-input" type="number" value="0" id="panelPosRot" />
+              <span class="display-input__hint">°</span>
+              <button class="display-btn-icon display-btn-icon--inline" id="panelResetRot" title="Reset rotation">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M3 10a7 7 0 1 1 1.5 4.33" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 14.5V10h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <button class="display-btn-icon" id="panelAlignH" title="Align horizontal center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 7H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4M16 7h4a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-4"/></svg>
+            </button>
+            <button class="display-btn-icon" id="panelAlignV" title="Align vertical center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M7 8V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v4M7 16v4a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-4"/></svg>
+            </button>
+          </div>
+        </div>
+        <!-- Opacity -->
+        <div class="display-section">
+          <p class="display-section__label">Opacity</p>
+          <div class="display-row">
+            <div class="display-input-wrap display-input-wrap--full">
+              <input class="display-input" type="text" value="100%" id="panelOpacity" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="edit-panel__footer">
+        <div class="edit-panel__footer-actions">
+          <button class="btn btn--secondary btn--flex" id="panelCancel">Cancel</button>
+          <button class="btn btn--primary btn--flex" id="panelSave">Save As Default</button>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+</div><!-- /main-layout -->
+
+<!-- ===== EXPANDED PREVIEW MODAL ===== -->
+<div class="preview-modal" id="previewModal">
+  <div class="preview-modal__backdrop" id="previewModalBackdrop"></div>
+  <div class="preview-modal__content">
+
+    <!-- Header -->
+    <div class="preview-modal__header">
+      <span class="preview-modal__title">LOCAL PREVIEW</span>
+      <button class="preview-modal__close" id="previewModalClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- Body: two columns -->
+    <div class="preview-modal__body">
+
+      <!-- Left col: overlay tabs + preview frame -->
+      <div class="preview-modal__left">
+        <div class="overlay-tabs" id="previewOverlayTabs">
+          <button class="overlay-tab overlay-tab--active" data-overlay="1">Overlay 1</button>
+          <button class="overlay-tab" data-overlay="2">Overlay 2</button>
+          <button class="overlay-tab" data-overlay="3">Overlay 3</button>
+          <button class="overlay-tab" data-overlay="4">Overlay 4</button>
+        </div>
+        <div class="preview-modal__frame">
+          <img class="preview-modal__img" id="previewModalImg" src="" alt="Graphic preview" style="display:none" />
+          <div class="preview-modal__placeholder" id="previewModalPlaceholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M2 8h20M8 8v14"/></svg>
+            <span>No preview available</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right col: graphic info + tabs + content -->
+      <div class="preview-modal__right">
+        <div class="preview-modal__right-header">
+          <span class="preview-modal__graphic-name" id="previewModalTitle">—</span>
+          <span class="preview-modal__vars-meta" id="previewModalVarsMeta">— Variables <span>•</span> More Info</span>
+        </div>
+        <!-- Variables / Display tabs -->
+        <div class="pm-tabs-bar">
+          <button class="pm-tab pm-tab--active" id="pmTabVars" data-tab="vars">Variables</button>
+          <button class="pm-tab" id="pmTabDisplay" data-tab="display">Display</button>
+        </div>
+        <!-- Variables pane -->
+        <div class="pm-tab-pane" id="pmVarsPane">
+          <div class="preview-modal__variables" id="previewModalVariables"></div>
+        </div>
+        <!-- Display pane -->
+        <div class="pm-tab-pane" id="pmDisplayPane" style="display:none">
+          <div class="display-section">
+            <p class="display-section__label">Size</p>
+            <div class="display-row">
+              <div class="display-input-wrap">
+                <input class="display-input" type="number" value="1920" id="pmSizeH" />
+                <span class="display-input__hint">H</span>
+              </div>
+              <button class="display-btn-icon" id="pmSizeLink" title="Lock aspect ratio">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              </button>
+              <div class="display-input-wrap">
+                <input class="display-input" type="number" value="1080" id="pmSizeW" />
+                <span class="display-input__hint">W</span>
+              </div>
+            </div>
+          </div>
+          <div class="display-section">
+            <p class="display-section__label">Position</p>
+            <div class="display-row">
+              <div class="display-input-wrap">
+                <input class="display-input" type="number" value="0" id="pmPosX" />
+                <span class="display-input__hint">X</span>
+              </div>
+              <div class="display-input-wrap">
+                <input class="display-input" type="number" value="0" id="pmPosY" />
+                <span class="display-input__hint">Y</span>
+              </div>
+            </div>
+            <div class="display-row display-row--mt">
+              <div class="display-input-wrap display-input-wrap--grow">
+                <input class="display-input" type="number" value="0" id="pmPosRot" />
+                <span class="display-input__hint">°</span>
+                <button class="display-btn-icon display-btn-icon--inline" id="pmResetRot" title="Reset rotation">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M3 10a7 7 0 1 1 1.5 4.33" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 14.5V10h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <button class="display-btn-icon" id="pmAlignH" title="Align horizontal center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 7H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4M16 7h4a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-4"/></svg>
+              </button>
+              <button class="display-btn-icon" id="pmAlignV" title="Align vertical center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M7 8V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v4M7 16v4a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-4"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="display-section">
+            <p class="display-section__label">Opacity</p>
+            <div class="display-row">
+              <div class="display-input-wrap display-input-wrap--full">
+                <input class="display-input" type="text" value="100%" id="pmOpacity" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="preview-modal__footer">
+      <button class="btn btn--secondary pm-cancel-btn" id="previewModalCancelBtn">CANCEL</button>
+      <div class="preview-modal__footer-right">
+        <button class="btn btn--secondary" id="previewModalUrlBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+          Preview URL
+        </button>
+        <button class="btn btn--to-air-outline" id="previewModalToAirBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+          To Air
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== EDIT EVENT MODAL ===== -->
+<div class="app-modal" id="editEventModal">
+  <div class="app-modal__backdrop" id="editEventModalBackdrop"></div>
+  <div class="app-modal__content app-modal__content--sm">
+    <div class="app-modal__header app-modal__header--dark">
+      <span class="app-modal__title">EDIT EVENT</span>
+      <button class="app-modal__close" id="editEventModalClose">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="app-modal__body">
+      <div class="modal-form">
+        <div class="modal-form__row">
+          <label class="modal-form__label">Time</label>
+          <input class="modal-form__input" type="text" id="editEventTime" placeholder="e.g. 45+2" />
+        </div>
+        <div class="modal-form__row">
+          <label class="modal-form__label">Type</label>
+          <select class="modal-form__input" id="editEventType">
+            <option>Goal</option>
+            <option>Yellow Card</option>
+            <option>Red Card</option>
+            <option>Substitution</option>
+            <option>Free Kick</option>
+            <option>Corner Kick</option>
+            <option>Penalty</option>
+            <option>VAR</option>
+            <option>Injury +</option>
+            <option>Half Time</option>
+            <option>Full Time</option>
+          </select>
+        </div>
+        <div class="modal-form__row">
+          <label class="modal-form__label">Team</label>
+          <select class="modal-form__input" id="editEventTeam">
+            <option value="MEL">Melbourne</option>
+            <option value="SYD">Sydney</option>
+          </select>
+        </div>
+        <div class="modal-form__row">
+          <label class="modal-form__label">Player</label>
+          <input class="modal-form__input" type="text" id="editEventPlayer" placeholder="e.g. #9 Marcus Lee" />
+        </div>
+      </div>
+    </div>
+    <div class="app-modal__footer">
+      <button class="btn btn--secondary btn--sm" id="editEventDeleteBtn" style="color:#d92d20;border-color:#fecdca">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8l1-10H3z" stroke="#d92d20" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Delete
+      </button>
+      <div class="app-modal__footer-right">
+        <button class="btn btn--secondary btn--sm" id="editEventCancelBtn">Cancel</button>
+        <button class="btn btn--primary btn--sm" id="editEventSaveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ADD MEDIA MODAL ===== -->
+<div class="app-modal" id="addMediaModal">
+  <div class="app-modal__backdrop" id="addMediaModalBackdrop"></div>
+  <div class="app-modal__content">
+    <div class="app-modal__header app-modal__header--dark">
+      <span class="app-modal__title">ADD MEDIA</span>
+      <button class="app-modal__close" id="addMediaModalClose">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="app-modal__sub-tabs" id="addMediaSubTabs">
+      <button class="app-modal__sub-tab app-modal__sub-tab--active" data-media-type="images">Images</button>
+      <button class="app-modal__sub-tab" data-media-type="videos">Videos</button>
+      <button class="app-modal__sub-tab" data-media-type="audio">Audio</button>
+    </div>
+    <div class="app-modal__search">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#737373" stroke-width="1.5"/><path d="M11 11l3 3" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <input class="app-modal__search-input" type="text" placeholder="Search media…" />
+    </div>
+    <div class="app-modal__media-list" id="addMediaList">
+      <div class="media-list-item">
+        <div class="media-list-item__thumb media-thumb--checkered"></div>
+        <div class="media-list-item__info">
+          <span class="media-list-item__name">Intro_Video.mp4</span>
+          <span class="media-list-item__meta">MP4 • 0:45</span>
+        </div>
+        <button class="btn btn--secondary btn--sm media-list-item__select" data-media-name="Intro_Video.mp4" data-media-meta="MP4 • 0:45">Select</button>
+      </div>
+      <div class="media-list-item">
+        <div class="media-list-item__thumb media-thumb--checkered"></div>
+        <div class="media-list-item__info">
+          <span class="media-list-item__name">Halftime_Show.mp4</span>
+          <span class="media-list-item__meta">MP4 • 2:30</span>
+        </div>
+        <button class="btn btn--secondary btn--sm media-list-item__select" data-media-name="Halftime_Show.mp4" data-media-meta="MP4 • 2:30">Select</button>
+      </div>
+      <div class="media-list-item">
+        <div class="media-list-item__thumb media-thumb--checkered"></div>
+        <div class="media-list-item__info">
+          <span class="media-list-item__name">Sponsor_Banner.png</span>
+          <span class="media-list-item__meta">PNG • 1920×80</span>
+        </div>
+        <button class="btn btn--secondary btn--sm media-list-item__select" data-media-name="Sponsor_Banner.png" data-media-meta="PNG • 1920×80">Select</button>
+      </div>
+      <div class="media-list-item">
+        <div class="media-list-item__thumb media-thumb--checkered"></div>
+        <div class="media-list-item__info">
+          <span class="media-list-item__name">Crowd_Noise.mp3</span>
+          <span class="media-list-item__meta">MP3 • 3:12</span>
+        </div>
+        <button class="btn btn--secondary btn--sm media-list-item__select" data-media-name="Crowd_Noise.mp3" data-media-meta="MP3 • 3:12">Select</button>
+      </div>
+    </div>
+    <div class="app-modal__footer">
+      <button class="btn btn--secondary btn--sm" id="addMediaCancelBtn">Cancel</button>
+      <div class="app-modal__footer-right">
+        <button class="btn btn--primary btn--sm" id="addMediaConfirmBtn">Add media</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Selection Panel (floating, shown when cards are multi-selected) -->
+<div class="selection-panel" id="selectionPanel" style="display:none">
+  <span class="selection-panel__count" id="selectionCount">0 Selected</span>
+  <span class="selection-panel__hint">⌘G to group</span>
+  <button class="selection-panel__btn" id="selectionGroupBtn">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
+    Create Group
+  </button>
+  <button class="selection-panel__clear" id="selectionClearBtn" title="Clear selection">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M9 3 3 9M3 3l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
+<!-- ===== ADD GRAPHIC MODAL ===== -->
+<div class="app-modal" id="agModal">
+  <div class="app-modal__backdrop" id="agModalBackdrop"></div>
+  <div class="app-modal__content ag-modal__content">
+    <div class="app-modal__header app-modal__header--dark">
+      <div class="ag-modal__header-inner">
+        <button class="ag-modal__back" id="agBackBtn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <span class="app-modal__title" id="agModalTitle">ADD GRAPHIC</span>
+      </div>
+      <button class="app-modal__close" id="agModalClose">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- Step 1: Select Template -->
+    <div class="ag-step" id="agStep1">
+      <div class="app-modal__search">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#737373" stroke-width="1.5"/><path d="M11 11l3 3" stroke="#737373" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input class="app-modal__search-input" type="text" id="agSearchInput" placeholder="Search graphics…" />
+      </div>
+      <div class="ag-template-list" id="agTemplateList"></div>
+      <div class="app-modal__footer">
+        <button class="btn btn--secondary btn--sm" id="agCancelBtn">CANCEL</button>
+        <div class="app-modal__footer-right">
+          <button class="btn btn--primary btn--sm" id="agContinueBtn" disabled>CONTINUE →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Configure -->
+    <div class="ag-step ag-step--hidden" id="agStep2">
+      <div class="ag-step2-body">
+        <div class="ag-preview-card" id="agPreviewCard">
+          <div class="ag-preview-card__thumb" id="agPreviewThumb"></div>
+          <div class="ag-preview-card__info">
+            <span class="ag-preview-card__name" id="agPreviewName">Lower Third</span>
+            <span class="ag-preview-card__meta" id="agPreviewMeta">Broadcast · 2 variables</span>
+          </div>
+        </div>
+        <div class="ag-fields">
+          <div class="ag-field">
+            <label class="ag-field__label">Name</label>
+            <input class="ag-field__input" type="text" id="agNameInput" placeholder="e.g. Player Lower Third" />
+          </div>
+          <div class="ag-field-row">
+            <div class="ag-field">
+              <label class="ag-field__label">Add to Tab</label>
+              <select class="ag-field__input ag-field__select" id="agTabSelect"></select>
+            </div>
+            <div class="ag-field">
+              <label class="ag-field__label">Overlay</label>
+              <select class="ag-field__input ag-field__select" id="agOverlaySelect"></select>
+            </div>
+          </div>
+          <div class="ag-field ag-field--toggle">
+            <div class="ag-field__toggle-row">
+              <div class="ag-field__toggle-info">
+                <span class="ag-field__label">Extension</span>
+                <span class="ag-field__hint">Add a secondary card below this graphic</span>
+              </div>
+              <button class="toggle toggle--sm toggle--red" id="agExtensionToggle"><span class="toggle__thumb"></span></button>
+            </div>
+          </div>
+        </div>
+        <div class="ag-vars-section" id="agVarsSection">
+          <div class="ag-vars-header">Variables</div>
+          <div class="ag-var-fields" id="agVarFields"></div>
+        </div>
+      </div>
+      <div class="app-modal__footer ag-footer--step2">
+        <button class="btn btn--secondary btn--sm" id="agCancelBtn2">CANCEL</button>
+        <div class="app-modal__footer-right ag-footer-actions">
+          <button class="btn btn--secondary btn--sm" id="agAddDefaultBtn">Add to Default</button>
+          <button class="btn btn--to-air btn--sm" id="agAddPreviewBtn">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 5.5l4 2.5-4 2.5V5.5z" fill="currentColor"/></svg>
+            Add + Preview
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AG Toast -->
+<div class="ag-toast" id="agToast">
+  <span id="agToastMsg">Graphic added</span>
+  <button class="ag-toast__undo" id="agToastUndo">Undo</button>
+</div>
+
+<!-- ===== EDIT PLAYER MODAL ===== -->
+<div class="app-modal" id="editPlayerModal">
+  <div class="app-modal__backdrop" id="editPlayerModalBackdrop"></div>
+  <div class="app-modal__content app-modal__content--sm">
+    <div class="ep-modal__header">
+      <span class="ep-modal__title">EDIT PLAYER</span>
+      <button class="ep-modal__close" id="editPlayerModalClose">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="ep-modal__body">
+      <div class="ep-form">
+        <div class="ep-form__row">
+          <label class="ep-form__label">First Name</label>
+          <input class="ep-form__input" id="epFirstName" type="text" placeholder="First name" />
+        </div>
+        <div class="ep-form__row">
+          <label class="ep-form__label">Second Name</label>
+          <input class="ep-form__input" id="epSecondName" type="text" placeholder="Second name" />
+        </div>
+        <div class="ep-form__row">
+          <label class="ep-form__label">Number</label>
+          <input class="ep-form__input" id="epNumber" type="number" placeholder="e.g. 9" min="1" max="99" />
+        </div>
+        <div class="ep-form__row">
+          <label class="ep-form__label">Position</label>
+          <div class="ep-select-wrap">
+            <select class="ep-form__input ep-form__select" id="epPosition">
+              <option value="GK">Goalkeeper</option>
+              <option value="RB">Right Back</option>
+              <option value="CB">Centre Back</option>
+              <option value="LB">Left Back</option>
+              <option value="DM">Defensive Midfielder</option>
+              <option value="CM">Central Midfielder</option>
+              <option value="AM">Attacking Midfielder</option>
+              <option value="RM">Right Midfielder</option>
+              <option value="LM">Left Midfielder</option>
+              <option value="RW">Right Winger</option>
+              <option value="LW">Left Winger</option>
+              <option value="ST">Striker</option>
+            </select>
+            <svg class="ep-select-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="ep-form__row">
+          <label class="ep-form__label">Player Image</label>
+          <div class="ep-avatar-row">
+            <div class="ep-avatar" id="epAvatarPreview">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div class="ep-avatar-actions">
+              <button class="ep-avatar-btn" id="epDeleteImg">Delete</button>
+              <button class="ep-avatar-btn" id="epEditImg">Edit</button>
+              <button class="ep-avatar-btn" id="epDownloadImg">Download</button>
+              <button class="ep-avatar-btn ep-avatar-btn--update" id="epUpdateImg">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ep-modal__footer">
+      <div class="ep-modal__footer-divider"></div>
+      <div class="ep-modal__footer-actions">
+        <button class="ep-btn ep-btn--cancel" id="editPlayerCancelBtn">CANCEL</button>
+        <button class="ep-btn ep-btn--save" id="editPlayerSaveBtn">SAVE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
