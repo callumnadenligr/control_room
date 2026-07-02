@@ -2813,6 +2813,82 @@ let _activeEventQuery = '';
 const _searchField = document.getElementById('contentSearchField');
 const _searchClearBtn = document.getElementById('searchClearBtn');
 const _searchWrapper = document.getElementById('searchInputWrapper');
+const _topbar = document.getElementById('contentTopbar');
+const _topbarLeft = document.getElementById('contentTopbarLeft');
+const _searchIconBtn = document.getElementById('searchIconBtn');
+
+// ---- Responsive topbar ----
+
+const _TOPBAR_COMPACT_PX  = 660; // below: preview icon-only, search shrinks
+const _TOPBAR_MINIMAL_PX  = 490; // below: search hides, becomes icon
+
+function _openTopbarSearch() {
+  if (!_topbarLeft || !_topbar) return;
+  // Fix current width so CSS can transition it to 0
+  const w = _topbarLeft.offsetWidth;
+  _topbarLeft.style.width = w + 'px';
+  // Force reflow so the explicit width is registered before the transition
+  // eslint-disable-next-line no-unused-expressions
+  _topbarLeft.offsetWidth;
+  _topbarLeft.style.width = '0';
+  _topbar.classList.add('content-topbar--search-open');
+  _searchField?.focus();
+}
+
+function _closeTopbarSearch() {
+  if (!_topbarLeft || !_topbar) return;
+  // scrollWidth returns actual content width even when overflow:hidden + width:0
+  const targetW = _topbarLeft.scrollWidth;
+  _topbar.classList.remove('content-topbar--search-open');
+  _topbarLeft.style.width = targetW + 'px';
+  _topbarLeft.addEventListener('transitionend', () => {
+    _topbarLeft.style.width = ''; // Return to auto after animation
+  }, { once: true });
+}
+
+function _isTopbarSearchOpen() {
+  return _topbar?.classList.contains('content-topbar--search-open') ?? false;
+}
+
+_searchIconBtn?.addEventListener('click', () => {
+  _openTopbarSearch();
+});
+
+// Close topbar search on Escape or when field loses focus with no value
+_searchField?.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && _isTopbarSearchOpen()) {
+    _searchField.value = '';
+    _searchWrapper?.classList.remove('search-input--active');
+    _closeSearchPane();
+    _closeTopbarSearch();
+  }
+});
+
+_searchField?.addEventListener('blur', () => {
+  if (_isTopbarSearchOpen() && !_searchField.value.trim()) {
+    _closeTopbarSearch();
+  }
+});
+
+// ResizeObserver — toggle compact/minimal classes
+if (_topbar && typeof ResizeObserver !== 'undefined') {
+  const _topbarRO = new ResizeObserver(entries => {
+    const w = entries[0].contentRect.width;
+    if (w < _TOPBAR_MINIMAL_PX) {
+      _topbar.classList.remove('content-topbar--compact');
+      _topbar.classList.add('content-topbar--minimal');
+    } else if (w < _TOPBAR_COMPACT_PX) {
+      _topbar.classList.add('content-topbar--compact');
+      _topbar.classList.remove('content-topbar--minimal');
+      // If we were in search-open, close it (now search is visible)
+      if (_isTopbarSearchOpen()) _closeTopbarSearch();
+    } else {
+      _topbar.classList.remove('content-topbar--compact', 'content-topbar--minimal');
+      if (_isTopbarSearchOpen()) _closeTopbarSearch();
+    }
+  });
+  _topbarRO.observe(_topbar);
+}
 
 const _SVG_DRAG_DOTS = `<svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg>`;
 const _SVG_SLIDERS = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4H14M10 4H3M21 12H12M8 12H3M21 20H16M12 20H3"/><circle cx="12" cy="4" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="14" cy="20" r="2"/></svg>`;
@@ -2990,7 +3066,11 @@ _searchClearBtn?.addEventListener('click', () => {
   if (_searchField) _searchField.value = '';
   _searchWrapper?.classList.remove('search-input--active');
   _closeSearchPane();
-  _searchField?.focus();
+  if (_isTopbarSearchOpen()) {
+    _closeTopbarSearch();
+  } else {
+    _searchField?.focus();
+  }
 });
 
 // ⌘K focus shortcut

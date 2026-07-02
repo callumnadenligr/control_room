@@ -1069,6 +1069,8 @@ img { display: block; }
   flex-direction: column;
   overflow: hidden;
   background: var(--color-bg-primary);
+  container-type: inline-size;
+  container-name: content-area;
   box-shadow: inset 1px 0 0 var(--color-border-secondary);
 }
 
@@ -1080,6 +1082,15 @@ img { display: block; }
   padding: 24px 24px 0;
   flex-shrink: 0;
   background: #fcfcfd;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.content-topbar__left {
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+  /* width set via JS for animation; auto otherwise */
 }
 
 .content-type-tabs {
@@ -1119,19 +1130,37 @@ img { display: block; }
   gap: 16px;
 }
 
+/* ---- Search Icon Button (compact/minimal mode) ---- */
+.search-icon-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  color: #737373;
+}
+.search-icon-btn:hover { color: #404040; background: #f5f5f5; }
+
 /* ---- Search Input ---- */
 .search-input {
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 312px;
+  width: 240px;
   height: 36px;
   padding: 0 8px 0 12px;
   background: white;
   border: 1px solid #d4d4d4;
   border-radius: 8px;
   box-shadow: var(--shadow-xs);
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s, width 0.3s cubic-bezier(0.4, 0, 0.2, 1), flex 0.3s;
+  flex-shrink: 0;
 }
 
 .search-input--active {
@@ -1179,6 +1208,55 @@ img { display: block; }
 .search-input__clear:hover { color: #404040; background: #f0f0f0; }
 .search-input--active .search-input__shortcut { display: none; }
 .search-input--active .search-input__clear { display: flex; }
+
+/* ---- Topbar responsive states ---- */
+
+/* Compact: preview button icon-only, search shrinks */
+.content-topbar--compact .btn-text { display: none; }
+.content-topbar--compact .btn--preview-url { padding: 0; width: 36px; justify-content: center; }
+.content-topbar--compact .search-input { width: 160px; }
+.content-topbar--compact .search-input__shortcut { display: none; }
+
+/* Minimal: search input hidden, search icon shown */
+.content-topbar--minimal .search-input { display: none; }
+.content-topbar--minimal .search-icon-btn { display: flex; }
+.content-topbar--minimal .btn-text { display: none; }
+.content-topbar--minimal .btn--preview-url { padding: 0; width: 36px; justify-content: center; }
+
+/* Search open: tabs collapse, search fills space */
+.content-topbar--search-open .content-topbar__left {
+  opacity: 0;
+  pointer-events: none;
+}
+.content-topbar--search-open .content-topbar__actions {
+  flex: 1;
+}
+.content-topbar--search-open .search-input {
+  display: flex !important;
+  flex: 1;
+  width: auto;
+}
+.content-topbar--search-open .search-icon-btn { display: none; }
+
+/* ---- Card button icon-only at compact widths ---- */
+@container content-area (max-width: 700px) {
+  .graphic-card__actions .btn--preview,
+  .graphic-card__actions .btn--to-air-outline {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    flex-shrink: 0;
+    font-size: 0; /* collapses bare text nodes */
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .graphic-card__actions .btn--preview svg,
+  .graphic-card__actions .btn--to-air-outline svg {
+    flex-shrink: 0;
+  }
+}
 
 /* ---- Category Tabs Bar ---- */
 .category-tabs-bar {
@@ -1816,9 +1894,13 @@ img { display: block; }
 }
 
 .graphic-card--preview-state .btn--preview {
-  background: var(--color-orange);
-  border-color: var(--color-orange);
-  color: white;
+  background: var(--color-orange) !important;
+  border-color: var(--color-orange) !important;
+  color: white !important;
+}
+.graphic-card--preview-state .btn--preview svg path,
+.graphic-card--preview-state .btn--preview svg circle {
+  stroke: white !important;
 }
 
 .graphic-card__inner {
@@ -5426,6 +5508,8 @@ html.dark * { scrollbar-color: var(--color-border-primary) transparent; }
 html.dark .content-area              { background: var(--color-bg-secondary); }
 html.dark .content-pane              { background: var(--color-bg-secondary); }
 html.dark .content-topbar            { background: var(--color-bg-secondary) !important; }
+html.dark .search-icon-btn           { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-quaternary); }
+html.dark .search-icon-btn:hover     { background: var(--color-bg-primary); color: var(--color-text-secondary); }
 html.dark .category-tabs-bar         { background: var(--color-bg-secondary) !important; }
 
 /* ---- Edit panel ---- */
