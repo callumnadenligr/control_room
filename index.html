@@ -72,7 +72,7 @@
         <span class="toggle" id="autoGfxSwitch"><span class="toggle__thumb"></span></span>
       </button>
       <button class="nav-icon-btn">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="5" y="1" width="10" height="18" rx="2.5" stroke="#344054" stroke-width="1.6" fill="none"/><rect x="8" y="2.5" width="4" height="1.2" rx="0.6" fill="#344054"/><circle cx="10" cy="16.8" r="0.9" fill="#344054"/></svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9.99996 14.5832H10.0083M6.83329 18.3332H13.1666C14.1 18.3332 14.5668 18.3332 14.9233 18.1515C15.2369 17.9917 15.4918 17.7368 15.6516 17.4232C15.8333 17.0666 15.8333 16.5999 15.8333 15.6665V4.33317C15.8333 3.39975 15.8333 2.93304 15.6516 2.57652C15.4918 2.26292 15.2369 2.00795 14.9233 1.84816C14.5668 1.6665 14.1 1.6665 13.1666 1.6665H6.83329C5.89987 1.6665 5.43316 1.6665 5.07664 1.84816C4.76304 2.00795 4.50807 2.26292 4.34828 2.57652C4.16663 2.93304 4.16663 3.39975 4.16663 4.33317V15.6665C4.16663 16.5999 4.16663 17.0666 4.34828 17.4232C4.50807 17.7368 4.76304 17.9917 5.07664 18.1515C5.43316 18.3332 5.89987 18.3332 6.83329 18.3332ZM10.4166 14.5832C10.4166 14.8133 10.2301 14.9998 9.99996 14.9998C9.76984 14.9998 9.58329 14.8133 9.58329 14.5832C9.58329 14.3531 9.76984 14.1665 9.99996 14.1665C10.2301 14.1665 10.4166 14.3531 10.4166 14.5832Z" stroke="#344054" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <button class="nav-icon-btn dm-toggle" id="darkModeToggle" title="Toggle dark mode">
         <svg class="dm-icon dm-icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -142,15 +142,66 @@
 
       <div class="sidebar-nav" id="sidebarNav">
 
+        <!-- MATCH DETAILS SECTION -->
+        <div class="sidebar-section">
+          <div class="sidebar-section__header" data-section="matchDetails">
+            <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><g clip-path="url(#clip-info)"><path d="M10 13.3332V9.99984M10 6.6665H10.0083M18.3333 9.99984C18.3333 14.6022 14.6024 18.3332 10 18.3332C5.39763 18.3332 1.66667 14.6022 1.66667 9.99984C1.66667 5.39746 5.39763 1.6665 10 1.6665C14.6024 1.6665 18.3333 5.39746 18.3333 9.99984Z" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip-info"><rect width="20" height="20" fill="white"/></clipPath></defs></svg>
+            <span class="sidebar-section__title">Match Details</span>
+            <svg class="sidebar-section__chevron closed" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="sidebar-section__body collapsed" id="matchDetailsBody">
+            <div class="match-details-list">
+              <div class="match-detail-row" data-detail-key="home-team">
+                <span class="match-detail-row__key">Home Team</span>
+                <span class="match-detail-row__value">Melbourne Dragons</span>
+                <button class="match-detail-row__menu-btn" title="Edit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button>
+              </div>
+              <div class="match-detail-row" data-detail-key="away-team">
+                <span class="match-detail-row__key">Away Team</span>
+                <span class="match-detail-row__value">Sydney Sharks</span>
+                <button class="match-detail-row__menu-btn" title="Edit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button>
+              </div>
+              <div class="match-detail-row" data-detail-key="venue">
+                <span class="match-detail-row__key">Venue</span>
+                <span class="match-detail-row__value">AAMI Stadium, Melbourne</span>
+                <button class="match-detail-row__menu-btn" title="Edit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button>
+              </div>
+              <div class="match-detail-row" data-detail-key="competition">
+                <span class="match-detail-row__key">Competition</span>
+                <span class="match-detail-row__value">Aus Soccer Competition</span>
+                <button class="match-detail-row__menu-btn" title="Edit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button>
+              </div>
+              <div class="match-detail-row" data-detail-key="date">
+                <span class="match-detail-row__key">Date</span>
+                <span class="match-detail-row__value">2 Jul 2026</span>
+                <button class="match-detail-row__menu-btn" title="Edit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button>
+              </div>
+              <div class="match-detail-row" data-detail-key="time">
+                <span class="match-detail-row__key">Time</span>
+                <span class="match-detail-row__value">19:30</span>
+                <button class="match-detail-row__menu-btn" title="Edit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button>
+              </div>
+              <div class="match-detail-row" data-detail-key="match-id">
+                <span class="match-detail-row__key">Match ID</span>
+                <span class="match-detail-row__value">LGR-20260702-001</span>
+                <button class="match-detail-row__menu-btn" title="Edit"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
         <!-- SCORE SECTION -->
         <div class="sidebar-section">
           <div class="sidebar-section__header" data-section="score">
             <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 3h12v8a6 6 0 01-12 0V3z" stroke="#667085" stroke-width="1.5"/><path d="M4 5H2v2a2 2 0 002 2M16 5h2v2a2 2 0 01-2 2" stroke="#667085" stroke-width="1.5" fill="none"/><rect x="8" y="14" width="4" height="2" fill="#667085"/><rect x="6" y="16" width="8" height="2" rx="1" fill="#667085"/></svg>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 12.4998C7.23858 12.4998 5 10.2613 5 7.49984V2.87021C5 2.52533 5 2.3529 5.05026 2.21482C5.1345 1.98335 5.31684 1.80101 5.54832 1.71676C5.68639 1.6665 5.85883 1.6665 6.2037 1.6665H13.7963C14.1412 1.6665 14.3136 1.6665 14.4517 1.71676C14.6832 1.80101 14.8655 1.98335 14.9497 2.21482C15 2.3529 15 2.52533 15 2.87021V7.49984C15 10.2613 12.7614 12.4998 10 12.4998ZM10 12.4998V14.9998M15 3.33317H17.0833C17.4716 3.33317 17.6658 3.33317 17.8189 3.3966C18.0231 3.48118 18.1853 3.64341 18.2699 3.8476C18.3333 4.00074 18.3333 4.19489 18.3333 4.58317V4.99984C18.3333 5.77481 18.3333 6.1623 18.2481 6.48022C18.017 7.34295 17.3431 8.01682 16.4804 8.24799C16.1625 8.33317 15.775 8.33317 15 8.33317M5 3.33317H2.91667C2.52838 3.33317 2.33424 3.33317 2.1811 3.3966C1.97691 3.48118 1.81468 3.64341 1.7301 3.8476C1.66667 4.00074 1.66667 4.19489 1.66667 4.58317V4.99984C1.66667 5.77481 1.66667 6.1623 1.75185 6.48022C1.98302 7.34295 2.65689 8.01682 3.51962 8.24799C3.83753 8.33317 4.22502 8.33317 5 8.33317M6.2037 18.3332H13.7963C14.0008 18.3332 14.1667 18.1673 14.1667 17.9628C14.1667 16.3264 12.8401 14.9998 11.2037 14.9998H8.7963C7.1599 14.9998 5.83333 16.3264 5.83333 17.9628C5.83333 18.1673 5.99915 18.3332 6.2037 18.3332Z" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span class="sidebar-section__title">Score</span>
-            <svg class="sidebar-section__chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="sidebar-section__chevron closed" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="sidebar-section__body" id="scoreBody">
+          <div class="sidebar-section__body collapsed" id="scoreBody">
             <div class="score-controls">
               <div class="score-control">
                 <div class="number-input">
@@ -178,11 +229,11 @@
         <div class="sidebar-section">
           <div class="sidebar-section__header" data-section="clock">
             <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="11" r="7" stroke="#667085" stroke-width="1.5"/><path d="M10 7v4l3 2" stroke="#667085" stroke-width="1.5" stroke-linecap="round"/><path d="M7.5 2.5h5M10 2.5v2" stroke="#667085" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 7.9165V11.2498L12.0833 12.4998M10 4.1665C6.08798 4.1665 2.91667 7.33782 2.91667 11.2498C2.91667 15.1619 6.08798 18.3332 10 18.3332C13.912 18.3332 17.0833 15.1619 17.0833 11.2498C17.0833 7.33782 13.912 4.1665 10 4.1665ZM10 4.1665V1.6665M8.33333 1.6665H11.6667M16.9408 4.65987L15.6908 3.40987L16.3158 4.03487M3.05918 4.65987L4.30918 3.40987L3.68418 4.03487" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span class="sidebar-section__title">Clock</span>
-            <svg class="sidebar-section__chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="sidebar-section__chevron closed" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="sidebar-section__body" id="clockBody">
+          <div class="sidebar-section__body collapsed" id="clockBody">
             <div class="clock-controls">
               <div class="clock-row">
                 <button class="clock-btn-sm" id="clockDecrBtn">
@@ -213,11 +264,11 @@
         <div class="sidebar-section">
           <div class="sidebar-section__header" data-section="quickEvents">
             <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 2L3 12h7l-3 6 10-10h-7z" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 14.5833H2.91667M5.41667 10H1.66667M7.5 5.41667H3.33333M14.1667 2.5L8.66964 10.1958C8.42633 10.5365 8.30468 10.7068 8.30995 10.8488C8.31453 10.9724 8.37381 11.0876 8.47175 11.1632C8.58423 11.25 8.79353 11.25 9.21213 11.25H13.3333L12.5 17.5L17.997 9.80416C18.2403 9.46353 18.362 9.29322 18.3567 9.15123C18.3521 9.0276 18.2929 8.9124 18.1949 8.83682C18.0824 8.75 17.8731 8.75 17.4545 8.75H13.3333L14.1667 2.5Z" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span class="sidebar-section__title">Quick Events</span>
-            <svg class="sidebar-section__chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="sidebar-section__chevron closed" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="sidebar-section__body" id="quickEventsBody">
+          <div class="sidebar-section__body collapsed" id="quickEventsBody">
             <div class="team-tabs" id="teamTabs">
               <button class="team-tab" data-team="melbourne">Melbourne</button>
               <button class="team-tab team-tab--active" data-team="sydney">Sydney</button>
@@ -272,12 +323,12 @@
         <div class="sidebar-section">
           <div class="sidebar-section__header" data-section="matchEvents">
             <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10c0 1.5 2 3 4 3s3-1 4-3-2-3-4-3-4 1.5-4 3zM10 10c0 1.5 2 3 4 3s4-1.5 4-3-2-3-4-3-4 1.5-4 3z" stroke="#667085" stroke-width="1.3" fill="none"/></svg>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18.3333 10H15L12.5 17.5L7.49996 2.5L4.99996 10H1.66663" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span class="sidebar-section__title">Match Events</span>
             <span class="sidebar-badge">10 events</span>
-            <svg class="sidebar-section__chevron open" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="sidebar-section__chevron closed" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="sidebar-section__body" id="matchEventsBody">
+          <div class="sidebar-section__body collapsed" id="matchEventsBody">
             <div class="match-events-list" id="matchEventsList">
               <div class="match-event" data-event-time="53" data-event-type="Goal" data-event-player="#9 Marcus Lee" data-event-team="MEL" data-dot-class="match-event__dot--goal" data-type-class="match-event__type--goal"><span class="match-event__time">53'</span><span class="match-event__dot match-event__dot--goal"></span><span class="match-event__type match-event__type--goal">Goal</span><span class="match-event__player">#9 Marcus Lee</span><span class="match-event__team match-event__team--mel">MEL</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
               <div class="match-event" data-event-time="47" data-event-type="Yellow Card" data-event-player="#4 Sam Robinson" data-event-team="SYD" data-dot-class="match-event__dot--yellow" data-type-class="match-event__type--yellow"><span class="match-event__time">47'</span><span class="match-event__dot match-event__dot--yellow"></span><span class="match-event__type match-event__type--yellow">Yellow Card</span><span class="match-event__player">#4 Sam Robinson</span><span class="match-event__team match-event__team--syd">SYD</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
@@ -287,6 +338,41 @@
               <div class="match-event" data-event-time="39" data-event-type="Substitution" data-event-player="#18 ⇄ #8" data-event-team="MEL" data-dot-class="match-event__dot--blue" data-type-class="match-event__type--blue"><span class="match-event__time">39'</span><span class="match-event__dot match-event__dot--blue"></span><span class="match-event__type match-event__type--blue">Substitution</span><span class="match-event__player">#18 ⇄ #8</span><span class="match-event__team match-event__team--mel">MEL</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
               <div class="match-event" data-event-time="37" data-event-type="Corner Kick" data-event-player="#7 Liam Hughes" data-event-team="MEL" data-dot-class="" data-type-class=""><span class="match-event__time">37'</span><span class="match-event__dot"></span><span class="match-event__type">Corner Kick</span><span class="match-event__player">#7 Liam Hughes</span><span class="match-event__team match-event__team--mel">MEL</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
               <div class="match-event" data-event-time="24" data-event-type="Goal" data-event-player="#4 Sam Robinson" data-event-team="SYD" data-dot-class="match-event__dot--goal" data-type-class="match-event__type--goal"><span class="match-event__time">24'</span><span class="match-event__dot match-event__dot--goal"></span><span class="match-event__type match-event__type--goal">Goal</span><span class="match-event__player">#4 Sam Robinson</span><span class="match-event__team match-event__team--syd">SYD</span><button class="match-event__menu-btn" title="Event options"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg></button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- TEAM KITS SECTION -->
+        <div class="sidebar-section">
+          <div class="sidebar-section__header" data-section="teamKits">
+            <div class="sidebar-section__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+            <svg class="sidebar-section__section-icon" width="20" height="20" viewBox="0 0 21 17" fill="none"><g clip-path="url(#clip-shirt)"><path d="M19.95 5.46502C19.95 5.67246 19.8823 5.88128 19.7429 6.05582L18.2675 7.9041C18.0809 8.1379 17.8063 8.25948 17.529 8.25948C17.322 8.25948 17.1135 8.19164 16.9392 8.05198L15.225 6.67961V14.498C15.225 15.293 14.5904 15.9375 13.8075 15.9375H7.1925C6.40993 15.9375 5.77501 15.2927 5.77501 14.498V6.67961L4.03562 8.05315C3.88648 8.1911 3.67799 8.23309 3.47098 8.23309C3.19374 8.23309 2.91904 8.11142 2.7324 7.87771L1.25708 6.05582C1.11769 5.88188 1.05 5.67195 1.05 5.46502C1.05 5.18725 1.1714 4.91201 1.40467 4.72487L5.39139 1.52794C5.7691 1.22714 6.23865 1.0625 6.69343 1.0625H7.71226C7.93965 2.42284 9.09727 3.46169 10.5 3.46169C11.9027 3.46169 13.0612 2.42284 13.2875 1.0625H14.2797C14.7625 1.0625 15.2312 1.22714 15.6083 1.52944L19.595 4.72637C19.8289 4.91321 19.95 5.18911 19.95 5.46502Z" stroke="#667085" stroke-width="1.5"/></g><defs><clipPath id="clip-shirt"><rect width="21" height="17" fill="white"/></clipPath></defs></svg>
+            <span class="sidebar-section__title">Team Kits</span>
+            <svg class="sidebar-section__chevron closed" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="sidebar-section__body collapsed" id="teamKitsBody">
+            <div class="team-kits-fields">
+              <div class="team-field team-field--wide">
+                <label class="team-field__label">Home Kit</label>
+                <select class="team-field__select">
+                  <option>Home — Blue &amp; White</option>
+                  <option>Away — Red &amp; Black</option>
+                  <option>Third — Dark Navy</option>
+                </select>
+              </div>
+              <div class="team-field team-field--wide">
+                <label class="team-field__label">Away Kit</label>
+                <select class="team-field__select">
+                  <option>Home — Teal &amp; White</option>
+                  <option>Away — Yellow &amp; Grey</option>
+                  <option>Third — All Black</option>
+                </select>
+              </div>
+            </div>
+            <div class="team-kits-footer">
+              <button class="btn btn--secondary btn--full-width">Edit Kit Colours</button>
             </div>
           </div>
         </div>
@@ -326,8 +412,20 @@
     <!-- Category Tabs Bar -->
     <div class="category-tabs-bar">
       <div class="category-tabs" id="tabBar">
-        <button class="category-tab category-tab--active" data-tab-id="tab-pre-match">
-          <span class="category-tab__label">Default</span>
+        <button class="category-tab category-tab--active" data-tab-id="tab-break">
+          <span class="category-tab__label">Break</span>
+          <span class="category-tab__close" role="button" tabindex="-1" title="Remove tab"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M8 2 2 8M2 2l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <button class="category-tab" data-tab-id="tab-in-game">
+          <span class="category-tab__label">In Game</span>
+          <span class="category-tab__close" role="button" tabindex="-1" title="Remove tab"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M8 2 2 8M2 2l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <button class="category-tab" data-tab-id="tab-player">
+          <span class="category-tab__label">Player</span>
+          <span class="category-tab__close" role="button" tabindex="-1" title="Remove tab"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M8 2 2 8M2 2l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <button class="category-tab" data-tab-id="tab-caption">
+          <span class="category-tab__label">Caption</span>
           <span class="category-tab__close" role="button" tabindex="-1" title="Remove tab"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M8 2 2 8M2 2l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
         </button>
         <button class="category-tab category-tab--add" id="addTabBtn">
@@ -344,185 +442,163 @@
     <!-- Graphics Content -->
     <div class="graphics-content" id="graphicsContent">
 
-      <!-- GROUP 1 -->
-      <div class="graphic-group" data-tab="tab-pre-match">
+      <!-- BREAK GRAPHICS -->
+      <div class="graphic-group" data-tab="tab-break">
         <div class="group-header">
           <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-          <button class="group-header__collapse" data-group="g1">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+          <button class="group-header__collapse" data-group="gbreak"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="group-header__info">
-            <span class="group-header__name">Group Name</span>
-            <span class="group-header__meta">3 Graphics • 2 Extensions</span>
+            <span class="group-header__name">Break Graphics</span>
+            <span class="group-header__meta">5 Graphics</span>
           </div>
           <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
         </div>
-
-        <div class="group-cards" id="g1-cards">
-
-          <!-- Card: DEFAULT -->
+        <div class="group-cards" id="gbreak-cards">
+          <div class="graphic-card graphic-card--default" data-card-id="card-background">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><path d="M0 14L14 0M0 28L28 0M0 42L42 0M0 56L56 0M14 56L70 0M28 56L84 0M42 56L98 0M56 56L100 12M70 56L100 26M84 56L100 40" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><rect y="50" width="100" height="2" fill="#dc2626" opacity="0.7"/><rect y="52" width="100" height="1" fill="white" opacity="0.12"/><text x="50" y="30" font-family="ui-sans-serif,sans-serif" font-size="5" fill="rgba(255,255,255,0.12)" text-anchor="middle" font-weight="600" letter-spacing="2">BACKGROUND</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Background</span></div>
+                <p class="graphic-card__meta">1 Variable <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-background" data-name="Background" data-vars="1" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-intro">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><rect y="0" width="100" height="9" fill="#111827"/><text x="50" y="6.5" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="1">AUS SOCCER COMPETITION</text><circle cx="28" cy="31" r="12" fill="#16a34a" opacity="0.75"/><text x="28" y="34" font-family="ui-sans-serif,sans-serif" font-size="7" font-weight="700" fill="white" text-anchor="middle">MEL</text><text x="50" y="34" font-family="ui-sans-serif,sans-serif" font-size="6" font-weight="700" fill="rgba(255,255,255,0.5)" text-anchor="middle">VS</text><circle cx="72" cy="31" r="12" fill="#2563eb" opacity="0.75"/><text x="72" y="34" font-family="ui-sans-serif,sans-serif" font-size="7" font-weight="700" fill="white" text-anchor="middle">SYD</text><rect y="49" width="100" height="7" fill="#dc2626" opacity="0.15"/></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Intro</span></div>
+                <p class="graphic-card__meta">3 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-intro" data-name="Intro" data-vars="3" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
           <div class="graphic-card graphic-card--default" data-card-id="card-match-id">
             <div class="graphic-card__inner">
               <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><rect x="6" y="13" width="88" height="30" rx="3" fill="#111827"/><text x="25" y="31" font-family="ui-sans-serif,sans-serif" font-size="8" font-weight="700" fill="#4ade80" text-anchor="middle">MEL</text><text x="50" y="32" font-family="ui-sans-serif,sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">1&#8211;2</text><text x="75" y="31" font-family="ui-sans-serif,sans-serif" font-size="8" font-weight="700" fill="#60a5fa" text-anchor="middle">SYD</text><text x="50" y="39" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.25)" text-anchor="middle">AAMI STADIUM &#183; 2nd HALF</text></svg></div>
               <div class="graphic-card__info">
-                <div class="graphic-card__title-row"><span class="graphic-card__name">Match ID (Full Screen)</span></div>
-                <p class="graphic-card__meta">2 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Match ID</span></div>
+                <p class="graphic-card__meta">4 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
               </div>
               <div class="graphic-card__actions">
-                <button class="btn-icon btn-icon--edit" data-card="card-match-id" data-name="Match ID (Full Screen)" data-vars="4" title="Edit variables">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
-                </button>
+                <button class="btn-icon btn-icon--edit" data-card="card-match-id" data-name="Match ID" data-vars="4" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
                 <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
                 <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
               </div>
             </div>
           </div>
-
-          <!-- Card: DEFAULT (with extensions) -->
-          <div class="graphic-card graphic-card--default" data-card-id="card-preview">
+          <div class="graphic-card graphic-card--default" data-card-id="card-team-list">
             <div class="graphic-card__inner">
               <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><rect x="4" y="4" width="42" height="7" rx="2" fill="#16a34a" opacity="0.6"/><text x="25" y="9.5" font-family="ui-sans-serif,sans-serif" font-size="4" font-weight="600" fill="white" text-anchor="middle">MELBOURNE</text><rect x="54" y="4" width="42" height="7" rx="2" fill="#2563eb" opacity="0.6"/><text x="75" y="9.5" font-family="ui-sans-serif,sans-serif" font-size="4" font-weight="600" fill="white" text-anchor="middle">SYDNEY</text><line x1="50" y1="4" x2="50" y2="52" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/><rect x="6" y="14" width="38" height="3" rx="1" fill="rgba(255,255,255,0.12)"/><rect x="6" y="19" width="38" height="3" rx="1" fill="rgba(255,255,255,0.09)"/><rect x="6" y="24" width="38" height="3" rx="1" fill="rgba(255,255,255,0.12)"/><rect x="6" y="29" width="38" height="3" rx="1" fill="rgba(255,255,255,0.09)"/><rect x="6" y="34" width="38" height="3" rx="1" fill="rgba(255,255,255,0.12)"/><rect x="6" y="39" width="38" height="3" rx="1" fill="rgba(255,255,255,0.09)"/><rect x="6" y="44" width="38" height="3" rx="1" fill="rgba(255,255,255,0.12)"/><rect x="56" y="14" width="38" height="3" rx="1" fill="rgba(255,255,255,0.12)"/><rect x="56" y="19" width="38" height="3" rx="1" fill="rgba(255,255,255,0.09)"/><rect x="56" y="24" width="38" height="3" rx="1" fill="rgba(255,255,255,0.12)"/><rect x="56" y="29" width="38" height="3" rx="1" fill="rgba(255,255,255,0.09)"/><rect x="56" y="34" width="38" height="3" rx="1" fill="rgba(255,255,255,0.12)"/><rect x="56" y="39" width="38" height="3" rx="1" fill="rgba(255,255,255,0.09)"/><rect x="56" y="44" width="38" height="3" rx="1" fill="rgba(255,255,255,0.12)"/></svg></div>
               <div class="graphic-card__info">
-                <div class="graphic-card__title-row">
-                  <span class="graphic-card__name">Match ID (Full Screen)</span>
-                </div>
-                <p class="graphic-card__meta">2 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Team List</span></div>
+                <p class="graphic-card__meta">2 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
               </div>
               <div class="graphic-card__actions">
-                <button class="btn-icon btn-icon--edit" data-card="card-preview" data-name="Match ID (Full Screen)" data-vars="2" title="Edit variables">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
-                </button>
+                <button class="btn-icon btn-icon--edit" data-card="card-team-list" data-name="Team List" data-vars="2" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
                 <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
                 <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
               </div>
             </div>
-            <!-- Extensions (nested inside parent card boundary) -->
-            <div class="graphic-card__extensions">
-              <div class="graphic-card__extension graphic-card--default" data-card-id="card-sub1">
-                <div class="graphic-card__inner graphic-card__inner--sm">
-                  <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-                  <div class="graphic-card__thumbnail graphic-card__thumbnail--sm"></div>
-                  <div class="graphic-card__info">
-                    <div class="graphic-card__title-row"><span class="graphic-card__name">Graphic Name Example</span><span class="badge badge--blue-gray">Badge</span></div>
-                    <p class="graphic-card__meta">Secondary Information</p>
-                  </div>
-                  <div class="graphic-card__actions">
-                    <button class="btn-icon btn-icon--edit" data-card="card-sub1" data-name="Graphic Name Example" data-vars="2" title="Edit variables">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
-                    </button>
-                    <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
-                    <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
-                  </div>
-                </div>
-              </div>
-              <div class="graphic-card__extension graphic-card--default" data-card-id="card-sub2">
-                <div class="graphic-card__inner graphic-card__inner--sm">
-                  <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-                  <div class="graphic-card__thumbnail graphic-card__thumbnail--sm"></div>
-                  <div class="graphic-card__info">
-                    <div class="graphic-card__title-row"><span class="graphic-card__name">Graphic Name Example</span><span class="badge badge--blue-gray">Badge</span></div>
-                    <p class="graphic-card__meta">Secondary Information</p>
-                  </div>
-                  <div class="graphic-card__actions">
-                    <button class="btn-icon btn-icon--edit" data-card="card-sub2" data-name="Graphic Name Example" data-vars="2" title="Edit variables">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
-                    </button>
-                    <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
-                    <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-
-          <!-- Card: DEFAULT hover state -->
-          <div class="graphic-card graphic-card--default" data-card-id="card-lineup">
+          <div class="graphic-card graphic-card--default" data-card-id="card-team-stats">
             <div class="graphic-card__inner">
               <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><text x="50" y="9" font-family="ui-sans-serif,sans-serif" font-size="4" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">TEAM STATS</text><rect x="5" y="13" width="22" height="4" rx="1" fill="#16a34a" opacity="0.7"/><rect x="27" y="13" width="4" height="4" rx="1" fill="rgba(255,255,255,0.15)"/><rect x="31" y="13" width="28" height="4" rx="1" fill="#2563eb" opacity="0.7"/><text x="61" y="16.5" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.25)">SHOTS</text><rect x="5" y="21" width="18" height="4" rx="1" fill="#16a34a" opacity="0.7"/><rect x="23" y="21" width="4" height="4" rx="1" fill="rgba(255,255,255,0.15)"/><rect x="27" y="21" width="32" height="4" rx="1" fill="#2563eb" opacity="0.7"/><text x="61" y="24.5" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.25)">POSS</text><rect x="5" y="29" width="28" height="4" rx="1" fill="#16a34a" opacity="0.7"/><rect x="33" y="29" width="4" height="4" rx="1" fill="rgba(255,255,255,0.15)"/><rect x="37" y="29" width="22" height="4" rx="1" fill="#2563eb" opacity="0.7"/><text x="61" y="32.5" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.25)">PASSES</text><rect x="5" y="37" width="14" height="4" rx="1" fill="#16a34a" opacity="0.7"/><rect x="19" y="37" width="4" height="4" rx="1" fill="rgba(255,255,255,0.15)"/><rect x="23" y="37" width="36" height="4" rx="1" fill="#2563eb" opacity="0.7"/><text x="61" y="40.5" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.25)">FOULS</text></svg></div>
               <div class="graphic-card__info">
-                <div class="graphic-card__title-row"><span class="graphic-card__name">Lineup &amp; Info</span><span class="badge badge--blue-gray">Badge</span></div>
-                <p class="graphic-card__meta">2 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Team Stats</span></div>
+                <p class="graphic-card__meta">3 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
               </div>
               <div class="graphic-card__actions">
-                <button class="btn-icon btn-icon--edit" data-card="card-lineup" data-name="Lineup &amp; Info" data-vars="2" title="Edit variables">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
-                </button>
+                <button class="btn-icon btn-icon--edit" data-card="card-team-stats" data-name="Team Stats" data-vars="3" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
                 <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
                 <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
               </div>
             </div>
           </div>
-
-          <!-- Card: DEFAULT -->
-          <div class="graphic-card graphic-card--default" data-card-id="card-selected">
-            <div class="graphic-card__inner">
-              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-              <div class="graphic-card__thumbnail graphic-card__thumbnail--preview">
-                <img src="https://www.figma.com/api/mcp/asset/a5c381a2-ac74-47e6-8bad-39713e8aea9d" alt="Match ID preview" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" onerror="this.style.display='none'"/>
-              </div>
-              <div class="graphic-card__info">
-                <div class="graphic-card__title-row"><span class="graphic-card__name">Match ID (Full Screen)</span></div>
-                <p class="graphic-card__meta">4 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
-              </div>
-              <div class="graphic-card__actions">
-                <button class="btn-icon btn-icon--edit" data-card="card-selected" data-name="Match ID (Full Screen)" data-vars="4" title="Edit variables">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
-                </button>
-                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
-                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      <!-- GROUP 2 -->
-      <div class="graphic-group" data-tab="tab-pre-match">
+      <!-- IN GAME GRAPHICS -->
+      <div class="graphic-group graphic-group--hidden" data-tab="tab-in-game">
         <div class="group-header">
           <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-          <button class="group-header__collapse" data-group="g2">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+          <button class="group-header__collapse" data-group="gin-game"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="group-header__info">
-            <span class="group-header__name">Group Name</span>
-            <span class="group-header__meta">3 Graphics • 2 Extensions</span>
+            <span class="group-header__name">In Game Graphics</span>
+            <span class="group-header__meta">4 Graphics</span>
           </div>
           <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
         </div>
-        <div class="group-cards" id="g2-cards">
-          <div class="graphic-card graphic-card--default" data-card-id="card-g2-1">
+        <div class="group-cards" id="gin-game-cards">
+          <div class="graphic-card graphic-card--default" data-card-id="card-event">
             <div class="graphic-card__inner">
               <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422" opacity="0.6"/><rect x="4" y="30" width="62" height="22" rx="3" fill="#111827"/><rect x="4" y="30" width="4" height="22" fill="#4ade80" opacity="0.8"/><text x="12" y="40.5" font-family="ui-sans-serif,sans-serif" font-size="5" font-weight="700" fill="#4ade80">GOAL!</text><text x="12" y="48" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.55)">#9 Marcus Lee &#183; MEL</text><rect x="72" y="26" width="24" height="24" rx="3" fill="#111827"/><text x="84" y="40" font-family="ui-sans-serif,sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">53</text><text x="84" y="46.5" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="middle">MINUTE</text></svg></div>
               <div class="graphic-card__info">
-                <div class="graphic-card__title-row"><span class="graphic-card__name">Graphic Name Example</span><span class="badge badge--blue-gray">Badge</span></div>
-                <p class="graphic-card__meta">2 Variables <span class="meta-dot">•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Event</span></div>
+                <p class="graphic-card__meta">4 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
               </div>
               <div class="graphic-card__actions">
-                <button class="btn-icon btn-icon--edit" data-card="card-g2-1" data-name="Graphic Name Example" data-vars="2" title="Edit variables">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
-                </button>
+                <button class="btn-icon btn-icon--edit" data-card="card-event" data-name="Event" data-vars="4" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
                 <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
                 <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
               </div>
             </div>
           </div>
-          <div class="graphic-card graphic-card--default" data-card-id="card-g2-2">
+          <div class="graphic-card graphic-card--default" data-card-id="card-penalties">
             <div class="graphic-card__inner">
               <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-              <div class="graphic-card__thumbnail"></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><text x="50" y="9" font-family="ui-sans-serif,sans-serif" font-size="4" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">PENALTIES</text><text x="8" y="22" font-family="ui-sans-serif,sans-serif" font-size="4" font-weight="600" fill="#4ade80">MEL</text><circle cx="26" cy="20" r="5" fill="#16a34a"/><circle cx="36" cy="20" r="5" fill="#16a34a"/><circle cx="46" cy="20" r="5" fill="rgba(255,255,255,0.1)" stroke="#4ade80" stroke-width="0.8"/><circle cx="56" cy="20" r="5" fill="rgba(255,255,255,0.1)" stroke="#4ade80" stroke-width="0.8"/><circle cx="66" cy="20" r="5" fill="rgba(255,255,255,0.1)" stroke="#4ade80" stroke-width="0.8"/><text x="8" y="40" font-family="ui-sans-serif,sans-serif" font-size="4" font-weight="600" fill="#60a5fa">SYD</text><circle cx="26" cy="38" r="5" fill="#2563eb"/><circle cx="36" cy="38" r="5" fill="rgba(255,255,255,0.1)" stroke="#60a5fa" stroke-width="0.8"/><circle cx="46" cy="38" r="5" fill="rgba(255,255,255,0.1)" stroke="#60a5fa" stroke-width="0.8"/><circle cx="56" cy="38" r="5" fill="rgba(255,255,255,0.1)" stroke="#60a5fa" stroke-width="0.8"/><circle cx="66" cy="38" r="5" fill="rgba(255,255,255,0.1)" stroke="#60a5fa" stroke-width="0.8"/></svg></div>
               <div class="graphic-card__info">
-                <div class="graphic-card__title-row"><span class="graphic-card__name">Graphic Name Example</span><span class="badge badge--blue-gray">Badge</span></div>
-                <p class="graphic-card__meta">Secondary Information</p>
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Penalties</span></div>
+                <p class="graphic-card__meta">2 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
               </div>
               <div class="graphic-card__actions">
-                <button class="btn-icon btn-icon--edit" data-card="card-g2-2" data-name="Graphic Name Example" data-vars="3" title="Edit variables">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg>
-                </button>
+                <button class="btn-icon btn-icon--edit" data-card="card-penalties" data-name="Penalties" data-vars="2" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-scoreboard">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422" opacity="0.5"/><rect y="40" width="100" height="16" fill="#111827"/><rect y="40" width="2" height="16" fill="#dc2626"/><rect x="32" y="40" width="36" height="16" fill="#161c30"/><text x="15" y="51.5" font-family="ui-sans-serif,sans-serif" font-size="5" font-weight="700" fill="#4ade80" text-anchor="middle">MEL</text><text x="50" y="52" font-family="ui-sans-serif,sans-serif" font-size="6" font-weight="700" fill="white" text-anchor="middle">1&#8211;2</text><text x="85" y="51.5" font-family="ui-sans-serif,sans-serif" font-size="5" font-weight="700" fill="#60a5fa" text-anchor="middle">SYD</text><text x="50" y="44.5" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.35)" text-anchor="middle">53:42</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Scoreboard</span></div>
+                <p class="graphic-card__meta">3 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-scoreboard" data-name="Scoreboard" data-vars="3" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-status">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422" opacity="0.5"/><rect x="22" y="8" width="56" height="40" rx="4" fill="#111827"/><text x="50" y="29" font-family="ui-sans-serif,sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">2nd</text><text x="50" y="39" font-family="ui-sans-serif,sans-serif" font-size="5" fill="rgba(255,255,255,0.35)" text-anchor="middle">53:42</text><circle cx="39" cy="16" r="2.5" fill="#dc2626"/><text x="44" y="18" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="#dc2626" dominant-baseline="middle">LIVE</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Status</span></div>
+                <p class="graphic-card__meta">2 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-status" data-name="Status" data-vars="2" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
                 <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
                 <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
               </div>
@@ -531,7 +607,157 @@
         </div>
       </div>
 
-      <!-- Empty state: shown when active tab has no graphics -->
+      <!-- PLAYER GRAPHICS -->
+      <div class="graphic-group graphic-group--hidden" data-tab="tab-player">
+        <div class="group-header">
+          <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+          <button class="group-header__collapse" data-group="gplayer"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="group-header__info">
+            <span class="group-header__name">Player Graphics</span>
+            <span class="group-header__meta">4 Graphics</span>
+          </div>
+          <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
+        </div>
+        <div class="group-cards" id="gplayer-cards">
+          <div class="graphic-card graphic-card--default" data-card-id="card-player-card">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><rect x="4" y="4" width="92" height="48" rx="4" fill="#111827"/><rect x="4" y="4" width="92" height="14" rx="4" fill="#16a34a" opacity="0.65"/><text x="50" y="13.5" font-family="ui-sans-serif,sans-serif" font-size="4.5" font-weight="600" fill="white" text-anchor="middle">MELBOURNE DRAGONS</text><circle cx="22" cy="34" r="10" fill="#1f2937"/><path d="M22 27a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" fill="#374151"/><path d="M14 44c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="#374151"/><rect x="36" y="22" width="54" height="4" rx="2" fill="rgba(255,255,255,0.14)"/><rect x="36" y="29" width="40" height="3.5" rx="2" fill="rgba(255,255,255,0.09)"/><rect x="36" y="36" width="48" height="3.5" rx="2" fill="rgba(255,255,255,0.09)"/><circle cx="87" cy="31" r="8" fill="#16a34a" opacity="0.2"/><text x="87" y="34" font-family="ui-sans-serif,sans-serif" font-size="9" font-weight="700" fill="#4ade80" text-anchor="middle">9</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Player Card</span></div>
+                <p class="graphic-card__meta">5 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-player-card" data-name="Player Card" data-vars="5" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-player-stats">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><circle cx="26" cy="28" r="18" fill="none" stroke="#1f2937" stroke-width="5"/><circle cx="26" cy="28" r="18" fill="none" stroke="#16a34a" stroke-width="5" stroke-dasharray="75 38" stroke-dashoffset="28" opacity="0.8"/><text x="26" y="31" font-family="ui-sans-serif,sans-serif" font-size="6.5" font-weight="700" fill="white" text-anchor="middle">87</text><rect x="52" y="11" width="42" height="3" rx="1" fill="rgba(255,255,255,0.08)"/><rect x="52" y="17" width="32" height="3" rx="1" fill="rgba(255,255,255,0.08)"/><rect x="52" y="23" width="40" height="3" rx="1" fill="rgba(255,255,255,0.08)"/><rect x="52" y="29" width="28" height="3" rx="1" fill="rgba(255,255,255,0.08)"/><rect x="52" y="35" width="36" height="3" rx="1" fill="rgba(255,255,255,0.08)"/><rect x="52" y="41" width="22" height="3" rx="1" fill="rgba(255,255,255,0.08)"/></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Player Stats</span></div>
+                <p class="graphic-card__meta">4 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-player-stats" data-name="Player Stats" data-vars="4" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-player-profile">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><text x="50" y="40" font-family="ui-sans-serif,sans-serif" font-size="40" font-weight="700" fill="rgba(255,255,255,0.05)" text-anchor="middle">10</text><rect y="8" width="4" height="40" fill="#16a34a" opacity="0.6"/><text x="52" y="50" font-family="ui-sans-serif,sans-serif" font-size="5" font-weight="600" fill="rgba(255,255,255,0.55)" text-anchor="middle">CALLUM NADEN</text><text x="52" y="44" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.25)" text-anchor="middle">MIDFIELDER &#183; MELBOURNE</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Player Profile</span></div>
+                <p class="graphic-card__meta">3 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-player-profile" data-name="Player Profile" data-vars="3" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-motm">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><polygon points="50,7 53.5,18 65,18 56,24.5 59.5,35.5 50,29 40.5,35.5 44,24.5 35,18 46.5,18" fill="#f59e0b" opacity="0.85"/><text x="50" y="44" font-family="ui-sans-serif,sans-serif" font-size="3.5" font-weight="700" fill="rgba(255,255,255,0.45)" text-anchor="middle" letter-spacing="0.5">MAN OF THE MATCH</text><text x="50" y="51" font-family="ui-sans-serif,sans-serif" font-size="5" font-weight="600" fill="white" text-anchor="middle">M. LEE</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Man of the Match</span></div>
+                <p class="graphic-card__meta">4 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-motm" data-name="Man of the Match" data-vars="4" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAPTION GRAPHICS -->
+      <div class="graphic-group graphic-group--hidden" data-tab="tab-caption">
+        <div class="group-header">
+          <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+          <button class="group-header__collapse" data-group="gcaption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="group-header__info">
+            <span class="group-header__name">Caption Graphics</span>
+            <span class="group-header__meta">4 Graphics</span>
+          </div>
+          <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
+        </div>
+        <div class="group-cards" id="gcaption-cards">
+          <div class="graphic-card graphic-card--default" data-card-id="card-lower-third">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422" opacity="0.35"/><rect y="37" width="82" height="19" fill="#111827"/><rect y="37" width="3" height="19" fill="#dc2626"/><text x="8" y="47" font-family="ui-sans-serif,sans-serif" font-size="5" font-weight="700" fill="white">CALLUM NADEN</text><text x="8" y="53" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.4)">MIDFIELDER &#183; MELBOURNE DRAGONS</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Lower Third</span></div>
+                <p class="graphic-card__meta">3 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-lower-third" data-name="Lower Third" data-vars="3" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-score-bug">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422" opacity="0.35"/><rect x="58" y="4" width="38" height="18" rx="3" fill="#111827"/><text x="62" y="14" font-family="ui-sans-serif,sans-serif" font-size="4" fill="#4ade80" font-weight="600">MEL</text><text x="77" y="14.5" font-family="ui-sans-serif,sans-serif" font-size="5" font-weight="700" fill="white" text-anchor="middle">1-2</text><text x="93" y="14" font-family="ui-sans-serif,sans-serif" font-size="4" fill="#60a5fa" font-weight="600" text-anchor="end">SYD</text><text x="77" y="19.5" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="middle">53:42</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Score Bug</span></div>
+                <p class="graphic-card__meta">3 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-score-bug" data-name="Score Bug" data-vars="3" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-score-bug-live">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422" opacity="0.35"/><rect x="55" y="4" width="41" height="22" rx="3" fill="#111827"/><circle cx="61" cy="9.5" r="2.2" fill="#dc2626"/><text x="65" y="11" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="#dc2626" dominant-baseline="middle">LIVE</text><text x="59" y="19" font-family="ui-sans-serif,sans-serif" font-size="4" fill="#4ade80" font-weight="600">MEL</text><text x="75.5" y="19.5" font-family="ui-sans-serif,sans-serif" font-size="5" font-weight="700" fill="white" text-anchor="middle">1-2</text><text x="93" y="19" font-family="ui-sans-serif,sans-serif" font-size="4" fill="#60a5fa" font-weight="600" text-anchor="end">SYD</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Score Bug Live</span></div>
+                <p class="graphic-card__meta">4 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-score-bug-live" data-name="Score Bug Live" data-vars="4" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+          <div class="graphic-card graphic-card--default" data-card-id="card-break-bumper">
+            <div class="graphic-card__inner">
+              <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+              <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><path d="M0 56L60 0H100V56H0Z" fill="#161c30"/><text x="50" y="30" font-family="ui-sans-serif,sans-serif" font-size="12" font-weight="700" fill="rgba(255,255,255,0.07)" text-anchor="middle" letter-spacing="3">BREAK</text><rect y="50" width="100" height="6" fill="#dc2626" opacity="0.35"/><text x="50" y="18" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.25)" text-anchor="middle">AUS SOCCER COMPETITION</text><text x="50" y="44" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.2)" text-anchor="middle">BACK SHORTLY</text></svg></div>
+              <div class="graphic-card__info">
+                <div class="graphic-card__title-row"><span class="graphic-card__name">Break Bumper</span></div>
+                <p class="graphic-card__meta">2 Variables <span class="meta-dot">&#8226;</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span></p>
+              </div>
+              <div class="graphic-card__actions">
+                <button class="btn-icon btn-icon--edit" data-card="card-break-bumper" data-name="Break Bumper" data-vars="2" title="Edit variables"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.876 18.116c.046-.414.069-.62.131-.814a2 2 0 0 1 .234-.485c.111-.17.259-.317.553-.61L17 3a2.828 2.828 0 1 1 4 4L7.794 20.206c-.294.294-.442.442-.611.553a2 2 0 0 1-.485.233c-.193.063-.4.086-.814.132L2.5 21.5l.376-3.384Z"/></svg></button>
+                <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- Empty state: shown when active tab has no graphics -->
       <div class="graphics-empty-state" id="graphicsEmptyState">
         <div class="graphics-empty-state__icon">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12"/></svg>
@@ -564,6 +790,8 @@
       </div>
 
       <div class="graphics-content" id="mediaContent">
+
+        <!-- MEDIA GROUP 1: Broadcast Assets -->
         <div class="graphic-group media-group" data-media-tab="media-tab-pre-match">
           <div class="group-header">
             <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
@@ -571,69 +799,161 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="group-header__info">
-              <span class="group-header__name">Group Name</span>
-              <span class="group-header__meta">3 Media</span>
+              <span class="group-header__name">Broadcast Assets</span>
+              <span class="group-header__meta">5 Media</span>
             </div>
             <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
           </div>
           <div class="group-cards" id="mg1-cards">
 
-            <!-- Media card: DEFAULT -->
+            <!-- Match Intro.mp4 -->
             <div class="graphic-card graphic-card--default" data-card-id="media-card-1" data-card-type="media">
               <div class="graphic-card__inner">
                 <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-                <div class="graphic-card__thumbnail media-card__thumbnail"></div>
+                <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><rect y="50" width="100" height="3" fill="#dc2626" opacity="0.6"/><text x="50" y="8" font-family="ui-sans-serif,sans-serif" font-size="3.5" fill="rgba(255,255,255,0.2)" text-anchor="middle" letter-spacing="2">AUS SOCCER CHAMPIONSHIP</text><circle cx="50" cy="28" r="9" fill="rgba(255,255,255,0.12)"/><polygon points="47,23 47,33 57,28" fill="rgba(255,255,255,0.85)"/><text x="50" y="47" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="middle">0:45</text></svg></div>
                 <div class="graphic-card__info">
-                  <div class="graphic-card__title-row"><span class="graphic-card__name">Video_Name_Example.mp4</span></div>
-                  <p class="graphic-card__meta">MP4 <span class="meta-dot">•</span> 2:30 mins</p>
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Match Intro.mp4</span><span class="badge badge--blue-gray">VIDEO</span></div>
+                  <p class="graphic-card__meta">MP4 <span class="meta-dot">•</span> 0:45 mins</p>
                 </div>
                 <div class="graphic-card__actions">
-                  <button class="btn-icon btn-icon--edit" data-card="media-card-1" data-name="Video_Name_Example.mp4" data-vars="0" data-card-type="media" title="Edit media">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg>
-                  </button>
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-1" data-name="Match Intro.mp4" data-vars="0" data-card-type="media" title="Edit media"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg></button>
                   <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
                   <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
                 </div>
               </div>
             </div>
 
-            <!-- Media card: DEFAULT -->
+            <!-- Background Loop.mp4 -->
             <div class="graphic-card graphic-card--default" data-card-id="media-card-2" data-card-type="media">
               <div class="graphic-card__inner">
                 <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-                <div class="graphic-card__thumbnail media-card__thumbnail"></div>
+                <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0a0f1e"/><path d="M0 14L14 0M0 28L28 0M0 42L42 0M0 56L56 0M14 56L70 0M28 56L84 0M42 56L98 0M56 56L100 12M70 56L100 26M84 56L100 40" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><circle cx="50" cy="26" r="9" fill="rgba(255,255,255,0.1)"/><polygon points="47,21 47,31 57,26" fill="rgba(255,255,255,0.75)"/><text x="50" y="47" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="middle">2:00 LOOP</text></svg></div>
                 <div class="graphic-card__info">
-                  <div class="graphic-card__title-row">
-                    <span class="graphic-card__name">Media Name Example</span>
-                  </div>
-                  <p class="graphic-card__meta">MP4 <span class="meta-dot">•</span> 2:30 mins</p>
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Background Loop.mp4</span><span class="badge badge--blue-gray">VIDEO</span></div>
+                  <p class="graphic-card__meta">MP4 <span class="meta-dot">•</span> 2:00 mins</p>
                 </div>
                 <div class="graphic-card__actions">
-                  <button class="btn-icon btn-icon--edit" data-card="media-card-2" data-name="Media Name Example" data-vars="0" data-card-type="media" title="Edit media">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg>
-                  </button>
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-2" data-name="Background Loop.mp4" data-vars="0" data-card-type="media" title="Edit media"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg></button>
                   <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
                   <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
                 </div>
               </div>
             </div>
 
-            <!-- Media card: DEFAULT -->
+            <!-- Half Time Bumper.mp4 -->
             <div class="graphic-card graphic-card--default" data-card-id="media-card-3" data-card-type="media">
               <div class="graphic-card__inner">
                 <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
-                <div class="graphic-card__thumbnail media-card__thumbnail"></div>
+                <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0e1422"/><rect x="0" y="20" width="100" height="16" fill="rgba(220,38,38,0.12)"/><text x="50" y="31" font-family="ui-sans-serif,sans-serif" font-size="7" font-weight="700" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="1">HALF TIME</text><circle cx="50" cy="47" r="4" fill="rgba(255,255,255,0.1)"/><polygon points="48,44 48,50 54,47" fill="rgba(255,255,255,0.7)"/><text x="88" y="54" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="end">0:15</text></svg></div>
                 <div class="graphic-card__info">
-                  <div class="graphic-card__title-row">
-                    <span class="graphic-card__name">Media Name Example</span>
-                    <span class="badge badge--blue-gray">Badge</span>
-                  </div>
-                  <p class="graphic-card__meta">PNG <span class="meta-dot">•</span> More Info</p>
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Half Time Bumper.mp4</span><span class="badge badge--blue-gray">VIDEO</span></div>
+                  <p class="graphic-card__meta">MP4 <span class="meta-dot">•</span> 0:15 mins</p>
                 </div>
                 <div class="graphic-card__actions">
-                  <button class="btn-icon btn-icon--edit" data-card="media-card-3" data-name="Media Name Example" data-vars="0" data-card-type="media" title="Edit media">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg>
-                  </button>
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-3" data-name="Half Time Bumper.mp4" data-vars="0" data-card-type="media" title="Edit media"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg></button>
+                  <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                  <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Crowd Atmosphere.mp3 -->
+            <div class="graphic-card graphic-card--default" data-card-id="media-card-4" data-card-type="media">
+              <div class="graphic-card__inner">
+                <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#0d1117"/><rect x="8" y="24" width="2.5" height="8" rx="1.25" fill="#3b82f6" opacity="0.5"/><rect x="12" y="19" width="2.5" height="18" rx="1.25" fill="#3b82f6" opacity="0.6"/><rect x="16" y="17" width="2.5" height="22" rx="1.25" fill="#3b82f6" opacity="0.65"/><rect x="20" y="22" width="2.5" height="12" rx="1.25" fill="#3b82f6" opacity="0.55"/><rect x="24" y="16" width="2.5" height="24" rx="1.25" fill="#3b82f6" opacity="0.7"/><rect x="28" y="20" width="2.5" height="16" rx="1.25" fill="#3b82f6" opacity="0.6"/><rect x="32" y="23" width="2.5" height="10" rx="1.25" fill="#3b82f6" opacity="0.5"/><rect x="36" y="18" width="2.5" height="20" rx="1.25" fill="#3b82f6" opacity="0.65"/><rect x="40" y="21" width="2.5" height="14" rx="1.25" fill="#3b82f6" opacity="0.6"/><rect x="44" y="15" width="2.5" height="26" rx="1.25" fill="#3b82f6" opacity="0.75"/><rect x="48" y="19" width="2.5" height="18" rx="1.25" fill="#3b82f6" opacity="0.65"/><rect x="52" y="22" width="2.5" height="12" rx="1.25" fill="rgba(255,255,255,0.2)"/><rect x="56" y="20" width="2.5" height="16" rx="1.25" fill="rgba(255,255,255,0.18)"/><rect x="60" y="18" width="2.5" height="20" rx="1.25" fill="rgba(255,255,255,0.18)"/><rect x="64" y="21" width="2.5" height="14" rx="1.25" fill="rgba(255,255,255,0.15)"/><rect x="68" y="16" width="2.5" height="24" rx="1.25" fill="rgba(255,255,255,0.15)"/><rect x="72" y="20" width="2.5" height="16" rx="1.25" fill="rgba(255,255,255,0.13)"/><rect x="76" y="23" width="2.5" height="10" rx="1.25" fill="rgba(255,255,255,0.12)"/><rect x="80" y="21" width="2.5" height="14" rx="1.25" fill="rgba(255,255,255,0.1)"/><rect x="84" y="24" width="2.5" height="8" rx="1.25" fill="rgba(255,255,255,0.1)"/><rect x="88" y="22" width="2.5" height="12" rx="1.25" fill="rgba(255,255,255,0.08)"/><rect x="8" y="44" width="84" height="1.5" rx="0.75" fill="rgba(255,255,255,0.08)"/><rect x="8" y="44" width="44" height="1.5" rx="0.75" fill="#3b82f6" opacity="0.5"/><circle cx="52" cy="44.75" r="2.5" fill="#3b82f6" opacity="0.8"/><text x="8" y="52" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)">1:40</text><text x="92" y="52" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="end">3:20</text></svg></div>
+                <div class="graphic-card__info">
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Crowd Atmosphere.mp3</span><span class="badge badge--blue-gray">AUDIO</span></div>
+                  <p class="graphic-card__meta">MP3 <span class="meta-dot">•</span> 3:20 mins</p>
+                </div>
+                <div class="graphic-card__actions">
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-4" data-name="Crowd Atmosphere.mp3" data-vars="0" data-card-type="media" title="Edit media"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg></button>
+                  <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                  <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Broadcast Background.jpg -->
+            <div class="graphic-card graphic-card--default" data-card-id="media-card-5" data-card-type="media">
+              <div class="graphic-card__inner">
+                <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e1422"/><stop offset="100%" stop-color="#1e3a5f"/></linearGradient></defs><rect width="100" height="56" fill="url(#sky)"/><polygon points="0,44 18,22 36,34 55,14 72,28 88,18 100,30 100,56 0,56" fill="rgba(255,255,255,0.05)"/><rect x="0" y="48" width="100" height="8" fill="#0a0f1e" opacity="0.8"/><text x="50" y="54" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="middle">1920 × 1080 · JPG · 4.2 MB</text></svg></div>
+                <div class="graphic-card__info">
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Broadcast Background.jpg</span><span class="badge badge--blue-gray">IMAGE</span></div>
+                  <p class="graphic-card__meta">JPG <span class="meta-dot">•</span> 4.2 MB</p>
+                </div>
+                <div class="graphic-card__actions">
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-5" data-name="Broadcast Background.jpg" data-vars="0" data-card-type="media" title="Edit media"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg></button>
+                  <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                  <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MEDIA GROUP 2: Club Media -->
+        <div class="graphic-group media-group" data-media-tab="media-tab-pre-match">
+          <div class="group-header">
+            <div class="group-header__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+            <button class="group-header__collapse" data-group="mg2">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="#344054" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="group-header__info">
+              <span class="group-header__name">Club Media</span>
+              <span class="group-header__meta">3 Media</span>
+            </div>
+            <button class="group-header__menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="3" r="1.5" fill="#98a2b3"/><circle cx="8" cy="8" r="1.5" fill="#98a2b3"/><circle cx="8" cy="13" r="1.5" fill="#98a2b3"/></svg></button>
+          </div>
+          <div class="group-cards" id="mg2-cards">
+
+            <!-- Melbourne Dragons Badge.png -->
+            <div class="graphic-card graphic-card--default" data-card-id="media-card-6" data-card-type="media">
+              <div class="graphic-card__inner">
+                <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#1a2534"/><circle cx="50" cy="24" r="16" fill="rgba(22,163,74,0.2)" stroke="rgba(22,163,74,0.4)" stroke-width="1"/><text x="50" y="28" font-family="ui-sans-serif,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.6)" text-anchor="middle">MEL</text><text x="50" y="50" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="middle">2400 × 2400 · PNG · 2.4 MB</text></svg></div>
+                <div class="graphic-card__info">
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Melbourne Dragons Badge.png</span><span class="badge badge--blue-gray">IMAGE</span></div>
+                  <p class="graphic-card__meta">PNG <span class="meta-dot">•</span> 2.4 MB</p>
+                </div>
+                <div class="graphic-card__actions">
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-6" data-name="Melbourne Dragons Badge.png" data-vars="0" data-card-type="media" title="Edit media"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg></button>
+                  <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                  <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sydney FC Badge.png -->
+            <div class="graphic-card graphic-card--default" data-card-id="media-card-7" data-card-type="media">
+              <div class="graphic-card__inner">
+                <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#1a2534"/><circle cx="50" cy="24" r="16" fill="rgba(37,99,235,0.2)" stroke="rgba(37,99,235,0.4)" stroke-width="1"/><text x="50" y="28" font-family="ui-sans-serif,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,0.6)" text-anchor="middle">SYD</text><text x="50" y="50" font-family="ui-sans-serif,sans-serif" font-size="3" fill="rgba(255,255,255,0.3)" text-anchor="middle">2400 × 2400 · PNG · 1.8 MB</text></svg></div>
+                <div class="graphic-card__info">
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Sydney FC Badge.png</span><span class="badge badge--blue-gray">IMAGE</span></div>
+                  <p class="graphic-card__meta">PNG <span class="meta-dot">•</span> 1.8 MB</p>
+                </div>
+                <div class="graphic-card__actions">
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-7" data-name="Sydney FC Badge.png" data-vars="0" data-card-type="media" title="Edit media"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg></button>
+                  <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
+                  <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Marcus Johnson Headshot.png -->
+            <div class="graphic-card graphic-card--default" data-card-id="media-card-8" data-card-type="media">
+              <div class="graphic-card__inner">
+                <div class="graphic-card__drag"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><circle cx="2" cy="2" r="1.5" fill="#98a2b3"/><circle cx="6" cy="2" r="1.5" fill="#98a2b3"/><circle cx="2" cy="7" r="1.5" fill="#98a2b3"/><circle cx="6" cy="7" r="1.5" fill="#98a2b3"/><circle cx="2" cy="12" r="1.5" fill="#98a2b3"/><circle cx="6" cy="12" r="1.5" fill="#98a2b3"/></svg></div>
+                <div class="graphic-card__thumbnail"><svg viewBox="0 0 100 56" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><rect width="100" height="56" fill="#1e293b"/><rect x="34" y="3" width="32" height="50" rx="2" fill="#243044"/><circle cx="50" cy="19" r="8" fill="rgba(255,255,255,0.15)"/><path d="M30 54 Q50 32 70 54" fill="rgba(255,255,255,0.08)"/><text x="50" y="54" font-family="ui-sans-serif,sans-serif" font-size="2.8" fill="rgba(255,255,255,0.3)" text-anchor="middle">800 × 1000 · PNG · 890 KB</text></svg></div>
+                <div class="graphic-card__info">
+                  <div class="graphic-card__title-row"><span class="graphic-card__name">Marcus Johnson Headshot.png</span><span class="badge badge--blue-gray">IMAGE</span></div>
+                  <p class="graphic-card__meta">PNG <span class="meta-dot">•</span> 890 KB</p>
+                </div>
+                <div class="graphic-card__actions">
+                  <button class="btn-icon btn-icon--edit" data-card="media-card-8" data-name="Marcus Johnson Headshot.png" data-vars="0" data-card-type="media" title="Edit media"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3zM13.5 6.5l3 3"/></svg></button>
                   <button class="btn btn--secondary btn--md btn--preview"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Preview</button>
                   <button class="btn btn--to-air-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>To Air</button>
                 </div>
@@ -1002,22 +1322,6 @@
         <p id="panelTitle" style="display:none"></p>
         <p id="panelSubtitle" style="display:none"></p>
 
-        <!-- Action buttons -->
-        <div class="edit-panel__action-btns">
-          <button class="btn btn--secondary btn--flex" id="panelLocalBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><rect x="10" y="8" width="1.5" height="8" rx="0.75" fill="currentColor" stroke="none"/><rect x="12.5" y="8" width="1.5" height="8" rx="0.75" fill="currentColor" stroke="none"/></svg>
-            Local
-          </button>
-          <button class="btn btn--secondary btn--flex" id="panelUrlBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
-            Preview
-          </button>
-          <button class="btn btn--to-air-outline btn--flex" id="panelToAirBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
-            To Air
-          </button>
-        </div>
-
         <!-- Preview image -->
         <div class="edit-panel__preview">
           <img class="edit-panel__preview-img" id="panelPreviewImg"
@@ -1038,7 +1342,26 @@
           </div>
         </div>
 
+        <!-- Action buttons -->
+        <div class="edit-panel__action-btns">
+          <button class="btn btn--secondary btn--flex" id="panelLocalBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Local
+          </button>
+          <button class="btn btn--secondary btn--flex" id="panelUrlBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+            Preview
+          </button>
+          <button class="btn btn--to-air-outline btn--flex" id="panelToAirBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
+            To Air
+          </button>
+        </div>
+
       </div>
+
+      <!-- Divider -->
+      <div class="edit-panel__divider"></div>
 
       <!-- Tab bar -->
       <div class="edit-panel__tabs-bar">
@@ -1321,6 +1644,33 @@
       <div class="app-modal__footer-right">
         <button class="btn btn--secondary btn--sm" id="editEventCancelBtn">Cancel</button>
         <button class="btn btn--primary btn--sm" id="editEventSaveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== EDIT MATCH DETAIL MODAL ===== -->
+<div class="app-modal" id="editDetailModal">
+  <div class="app-modal__backdrop" id="editDetailModalBackdrop"></div>
+  <div class="app-modal__content app-modal__content--sm">
+    <div class="app-modal__header app-modal__header--dark">
+      <span class="app-modal__title" id="editDetailModalTitle">EDIT DETAIL</span>
+      <button class="app-modal__close" id="editDetailModalClose">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="app-modal__body">
+      <div class="modal-form">
+        <div class="modal-form__row">
+          <label class="modal-form__label" id="editDetailLabel">Value</label>
+          <input class="modal-form__input" type="text" id="editDetailInput" />
+        </div>
+      </div>
+    </div>
+    <div class="app-modal__footer">
+      <div class="app-modal__footer-right">
+        <button class="btn btn--secondary btn--sm" id="editDetailCancelBtn">Cancel</button>
+        <button class="btn btn--primary btn--sm" id="editDetailSaveBtn">Save</button>
       </div>
     </div>
   </div>

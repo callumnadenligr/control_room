@@ -21,8 +21,12 @@ document.querySelectorAll('.sidebar-section__header').forEach(header => {
 
   if (!body) return;
 
-  // Set initial max-height for animation
-  body.style.maxHeight = body.scrollHeight + 'px';
+  // Set initial max-height for animation — respect collapsed initial state
+  if (body.classList.contains('collapsed')) {
+    body.style.maxHeight = '0px';
+  } else {
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
 
   header.addEventListener('click', () => {
     const isOpen = !body.classList.contains('collapsed');
@@ -213,9 +217,9 @@ getAllTabs().forEach(wireTabEvents);
 document.getElementById('addTabBtn')?.addEventListener('click', createTab);
 
 // ---- Team Tabs (Quick Events) ----
-document.querySelectorAll('.team-tab').forEach(tab => {
+document.querySelectorAll('#teamTabs .team-tab').forEach(tab => {
   tab.addEventListener('click', () => {
-    document.querySelectorAll('.team-tab').forEach(t => t.classList.remove('team-tab--active'));
+    document.querySelectorAll('#teamTabs .team-tab').forEach(t => t.classList.remove('team-tab--active'));
     tab.classList.add('team-tab--active');
   });
 });
@@ -466,6 +470,41 @@ function syncScoreHeader() {
   if (awayEl && headerScores[1]) headerScores[1].textContent = awayEl.textContent;
 }
 
+const _MENU_DOT_SVG = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg>`;
+
+function addMatchEvent(typeLabel, dotClass, typeClass, teamLabel, teamClass, minute) {
+  const list = document.querySelector('.match-events-list');
+  if (!list) return;
+  const el = document.createElement('div');
+  el.className = 'match-event';
+  el.dataset.eventTime = minute;
+  el.dataset.eventType = typeLabel;
+  el.dataset.eventPlayer = '—';
+  el.dataset.eventTeam = teamLabel;
+  el.dataset.dotClass = dotClass;
+  el.dataset.typeClass = typeClass;
+  el.innerHTML = `<span class="match-event__time">${minute}'</span><span class="match-event__dot${dotClass ? ' ' + dotClass : ''}"></span><span class="match-event__type${typeClass ? ' ' + typeClass : ''}">${typeLabel}</span><span class="match-event__player">—</span><span class="match-event__team ${teamClass}">${teamLabel}</span><button class="match-event__menu-btn" title="Event options">${_MENU_DOT_SVG}</button>`;
+  list.prepend(el);
+  const badge = document.querySelector('.sidebar-section__header[data-section="matchEvents"] .sidebar-badge');
+  if (badge) badge.textContent = `${list.children.length} events`;
+  const body = document.getElementById('matchEventsBody');
+  if (body && !body.classList.contains('collapsed')) body.style.maxHeight = body.scrollHeight + 'px';
+}
+
+function removeLatestGoalEvent(teamLabel) {
+  const list = document.querySelector('.match-events-list');
+  if (!list) return;
+  const match = Array.from(list.querySelectorAll('.match-event')).find(
+    ev => ev.dataset.eventType === 'Goal' && ev.dataset.eventTeam === teamLabel
+  );
+  if (!match) return;
+  match.remove();
+  const badge = document.querySelector('.sidebar-section__header[data-section="matchEvents"] .sidebar-badge');
+  if (badge) badge.textContent = `${list.children.length} events`;
+  const body = document.getElementById('matchEventsBody');
+  if (body && !body.classList.contains('collapsed')) body.style.maxHeight = body.scrollHeight + 'px';
+}
+
 document.querySelectorAll('.number-input').forEach(input => {
   const display = input.querySelector('.number-input__value');
   const [minusBtn, plusBtn] = input.querySelectorAll('.number-input__btn');
@@ -473,12 +512,25 @@ document.querySelectorAll('.number-input').forEach(input => {
 
   minusBtn?.addEventListener('click', () => {
     const v = parseInt(display.textContent) || 0;
-    if (v > 0) { display.textContent = v - 1; syncScoreHeader(); }
+    if (v > 0) {
+      display.textContent = v - 1;
+      syncScoreHeader();
+      if (display.id === 'scoreHome') removeLatestGoalEvent('MEL');
+      else if (display.id === 'scoreAway') removeLatestGoalEvent('SYD');
+    }
   });
   plusBtn?.addEventListener('click', () => {
     const v = parseInt(display.textContent) || 0;
     display.textContent = v + 1;
     syncScoreHeader();
+    if (display.id === 'scoreHome' || display.id === 'scoreAway') {
+      const isHome = display.id === 'scoreHome';
+      const minute = document.getElementById('clockValue')?.textContent?.split(':')[0] || '0';
+      addMatchEvent('Goal', 'match-event__dot--goal', 'match-event__type--goal',
+        isHome ? 'MEL' : 'SYD',
+        isHome ? 'match-event__team--mel' : 'match-event__team--syd',
+        minute);
+    }
   });
 });
 
@@ -574,7 +626,6 @@ document.querySelectorAll('.event-btn').forEach(btn => {
       el.dataset.eventTeam = teamLabel;
       el.dataset.dotClass = dotClass;
       el.dataset.typeClass = typeClass;
-      const _MENU_DOT_SVG = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="2.5" r="1.2" fill="#667085"/><circle cx="7" cy="7" r="1.2" fill="#667085"/><circle cx="7" cy="11.5" r="1.2" fill="#667085"/></svg>`;
       el.innerHTML = `<span class="match-event__time">${minute}'</span><span class="match-event__dot${dotClass ? ' ' + dotClass : ''}"></span><span class="match-event__type${typeClass ? ' ' + typeClass : ''}">${typeLabel}</span><span class="match-event__player">—</span><span class="match-event__team ${teamClass}">${teamLabel}</span><button class="match-event__menu-btn" title="Event options">${_MENU_DOT_SVG}</button>`;
       list.prepend(el);
 
@@ -677,7 +728,7 @@ const panelClose = document.getElementById('panelClose');
 const panelCancel = document.getElementById('panelCancel');
 
 const VARIABLE_NAMES = {
-  'card-match-id': ['Competition', 'Home Team', 'Away Team', 'Venue'],
+  // Legacy cards
   'card-selected': ['Competition', 'Home Team', 'Away Team', 'Venue'],
   'card-preview': ['Competition', 'Home Team'],
   'card-sub1': ['Competition', 'Home Team'],
@@ -685,6 +736,27 @@ const VARIABLE_NAMES = {
   'card-lineup': ['Competition', 'Home Team'],
   'card-g2-1': ['Competition', 'Home Team'],
   'card-g2-2': ['Competition', 'Home Team', 'Away Team'],
+  // Break
+  'card-background': ['Background Image'],
+  'card-intro': ['Competition', 'Home Team', 'Away Team'],
+  'card-match-id': ['Competition', 'Home Team', 'Away Team', 'Venue'],
+  'card-team-list': ['Home Team', 'Away Team'],
+  'card-team-stats': ['Competition', 'Home Team', 'Away Team'],
+  // In Game
+  'card-event': ['Event Type', 'Player', 'Minute', 'Team'],
+  'card-penalties': ['Home Score', 'Away Score'],
+  'card-scoreboard': ['Home Team', 'Away Team', 'Score'],
+  'card-status': ['Status', 'Info'],
+  // Player
+  'card-player-card': ['Player Name', 'Number', 'Position', 'Team', 'Photo'],
+  'card-player-stats': ['Player Name', 'Stat 1', 'Stat 2', 'Stat 3'],
+  'card-player-profile': ['Player Name', 'Team', 'Photo'],
+  'card-motm': ['Player Name', 'Team', 'Goals', 'Rating'],
+  // Caption
+  'card-lower-third': ['Title', 'Name', 'Role'],
+  'card-score-bug': ['Home Team', 'Away Team', 'Score'],
+  'card-score-bug-live': ['Home Team', 'Away Team', 'Minute'],
+  'card-break-bumper': ['Competition', 'Message'],
 };
 
 const VARIABLE_VALUES = {
@@ -692,6 +764,17 @@ const VARIABLE_VALUES = {
   'Home Team': 'Melbourne Dragons',
   'Away Team': 'Sydney Sharks',
   'Venue': 'AAMI Stadium, Melbourne',
+  'Score': '3 – 1',
+  'Minute': '89',
+  'Team': 'Melbourne Dragons',
+  'Status': 'LIVE',
+  'Info': '2nd Half',
+  'Player Name': 'Marcus Lee',
+  'Number': '9',
+  'Position': 'Forward',
+  'Title': 'Goal Scorer',
+  'Name': 'Marcus Lee',
+  'Role': 'Forward',
 };
 
 let activeCardId = 'card-selected';
@@ -752,6 +835,20 @@ function openPanel(cardId, name, numVars) {
     panelSubtitle.innerHTML = `${numVars} Variable${numVars !== 1 ? 's' : ''}`;
     if (mediaPlaybackEl) mediaPlaybackEl.style.display = 'none';
     if (panelVariables) { panelVariables.style.display = ''; panelVariables.innerHTML = buildVariableFields(cardId, numVars); }
+  }
+
+  // Set panel preview from card thumbnail SVG
+  const panelPreviewImg = document.getElementById('panelPreviewImg');
+  const panelPreviewEl = panelPreviewImg?.parentElement;
+  const thumbSvg = card?.querySelector('.graphic-card__thumbnail svg');
+  if (thumbSvg && panelPreviewImg) {
+    const svgStr = new XMLSerializer().serializeToString(thumbSvg);
+    panelPreviewImg.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgStr);
+    panelPreviewImg.style.display = 'block';
+    panelPreviewEl?.classList.remove('edit-panel__preview--fallback');
+  } else if (panelPreviewImg) {
+    panelPreviewImg.style.display = 'none';
+    panelPreviewEl?.classList.add('edit-panel__preview--fallback');
   }
 
   // Reset to Variables tab
@@ -933,7 +1030,8 @@ function openPreviewModal() {
   const metaEl = document.getElementById('previewModalVarsMeta');
   const varsEl = document.getElementById('previewModalVariables');
   const name = panelTitle?.textContent || '—';
-  const numVars = (VARIABLE_NAMES[activeCardId] || []).length;
+  const editBtn = document.querySelector(`.btn-icon--edit[data-card="${activeCardId}"]`);
+  const numVars = (VARIABLE_NAMES[activeCardId] || []).length || parseInt(editBtn?.dataset.vars) || 0;
 
   if (titleEl) titleEl.textContent = name;
   if (metaEl) metaEl.innerHTML = `${numVars} Variable${numVars !== 1 ? 's' : ''} <span>•</span> <span class="more-info" data-tooltip="View graphic template documentation and usage notes">More Info</span>`;
@@ -1032,9 +1130,7 @@ function _sendPreviewCmd(cmd) {
 }
 
 // Local button — opens LOCAL PREVIEW modal
-document.getElementById('panelLocalBtn')?.addEventListener('click', () => {
-  document.getElementById('previewModal')?.classList.add('open');
-});
+// panelLocalBtn — disabled for now (no action)
 
 // ---- Panel Tab Switching ----
 function _panelSwitchTab(tab) {
@@ -1392,6 +1488,117 @@ document.getElementById('editEventDeleteBtn')?.addEventListener('click', () => {
 });
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && document.getElementById('editEventModal')?.classList.contains('open')) closeEditEventModal();
+  if (e.key === 'Escape' && document.getElementById('editDetailModal')?.classList.contains('open')) closeEditDetailModal();
+});
+
+// ---- Edit Match Detail ----
+
+const _DETAIL_KEY_LABELS = {
+  'home-team':   'Home Team',
+  'away-team':   'Away Team',
+  'venue':       'Venue',
+  'competition': 'Competition',
+  'date':        'Date',
+  'time':        'Time',
+  'match-id':    'Match ID',
+};
+
+let _editDetailRow = null;
+
+function openDetailContextMenu(row, menuBtn) {
+  closeContextMenu();
+  _activeContextMenuRow = row;
+
+  const menu = document.createElement('div');
+  menu.className = 'event-context-menu';
+  menu.innerHTML = `
+    <button class="event-context-menu__item" id="_ctxDetailEdit">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M11.333 2a1.886 1.886 0 112.667 2.667L5.333 13.333 2 14l.667-3.333L11.333 2z" stroke="#344054" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Edit
+    </button>`;
+
+  row.appendChild(menu);
+  _activeContextMenuEl = menu;
+
+  menu.querySelector('#_ctxDetailEdit').addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeContextMenu();
+    openEditDetailModal(row);
+  });
+}
+
+function openEditDetailModal(row) {
+  _editDetailRow = row;
+  const key = row.dataset.detailKey;
+  const label = _DETAIL_KEY_LABELS[key] || key;
+  const currentValue = row.querySelector('.match-detail-row__value').textContent;
+  document.getElementById('editDetailModalTitle').textContent = `EDIT ${label.toUpperCase()}`;
+  document.getElementById('editDetailLabel').textContent = label;
+  document.getElementById('editDetailInput').value = currentValue;
+  document.getElementById('editDetailModal').classList.add('open');
+  setTimeout(() => document.getElementById('editDetailInput').select(), 50);
+}
+
+function saveEditDetail() {
+  if (!_editDetailRow) return;
+  const newValue = document.getElementById('editDetailInput').value.trim();
+  if (!newValue) return;
+  const key = _editDetailRow.dataset.detailKey;
+  _editDetailRow.querySelector('.match-detail-row__value').textContent = newValue;
+  syncDetailToHeader(key, newValue);
+  closeEditDetailModal();
+}
+
+function syncDetailToHeader(key, value) {
+  if (key === 'home-team') {
+    const el = document.querySelector('.scoreboard__team--home .scoreboard__team-name');
+    if (el) el.textContent = value.toUpperCase();
+    const scoreLabels = document.querySelectorAll('.score-control__label');
+    if (scoreLabels[0]) scoreLabels[0].textContent = value;
+    const teamTab = document.querySelector('#teamTabs .team-tab[data-team="melbourne"]');
+    if (teamTab) teamTab.textContent = value;
+  } else if (key === 'away-team') {
+    const el = document.querySelector('.scoreboard__team--away .scoreboard__team-name');
+    if (el) el.textContent = value.toUpperCase();
+    const scoreLabels = document.querySelectorAll('.score-control__label');
+    if (scoreLabels[1]) scoreLabels[1].textContent = value;
+    const teamTab = document.querySelector('#teamTabs .team-tab[data-team="sydney"]');
+    if (teamTab) teamTab.textContent = value;
+  } else if (key === 'venue') {
+    const el = document.querySelector('.competition-text__venue');
+    if (el) el.textContent = value;
+  } else if (key === 'competition') {
+    const el = document.querySelector('.competition-text__name');
+    if (el) el.textContent = value;
+  }
+}
+
+function closeEditDetailModal() {
+  document.getElementById('editDetailModal')?.classList.remove('open');
+  _editDetailRow = null;
+}
+
+document.getElementById('editDetailSaveBtn')?.addEventListener('click', saveEditDetail);
+document.getElementById('editDetailCancelBtn')?.addEventListener('click', closeEditDetailModal);
+document.getElementById('editDetailModalClose')?.addEventListener('click', closeEditDetailModal);
+document.getElementById('editDetailModalBackdrop')?.addEventListener('click', closeEditDetailModal);
+document.getElementById('editDetailInput')?.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') saveEditDetail();
+});
+
+// Match detail menu button delegation
+document.addEventListener('click', (e) => {
+  const menuBtn = e.target.closest('.match-detail-row__menu-btn');
+  if (menuBtn) {
+    e.stopPropagation();
+    const row = menuBtn.closest('.match-detail-row');
+    if (_activeContextMenuRow === row && _activeContextMenuEl) {
+      closeContextMenu();
+    } else {
+      openDetailContextMenu(row, menuBtn);
+    }
+    return;
+  }
 });
 
 // ---- Data Sub-tabs ----
@@ -2207,17 +2414,17 @@ document.addEventListener('keydown', (e) => {
    ============================================================ */
 
 const PITCH_SLOTS = [
-  { left: 50, top: 88 },   // 0 GK
-  { left: 78, top: 72 },   // 1 RB
-  { left: 60, top: 72 },   // 2 CB-R
-  { left: 40, top: 72 },   // 3 CB-L
-  { left: 22, top: 72 },   // 4 LB
-  { left: 50, top: 54 },   // 5 DM
-  { left: 68, top: 46 },   // 6 CM-R
-  { left: 32, top: 46 },   // 7 CM-L
-  { left: 78, top: 25 },   // 8 RW
-  { left: 50, top: 18 },   // 9 ST
-  { left: 22, top: 25 },   // 10 LW
+  { left: 50, top: 91 },   // 0 GK
+  { left: 80, top: 81 },   // 1 RB
+  { left: 62, top: 81 },   // 2 CB-R
+  { left: 38, top: 81 },   // 3 CB-L
+  { left: 20, top: 81 },   // 4 LB
+  { left: 50, top: 71 },   // 5 DM
+  { left: 68, top: 63 },   // 6 CM-R
+  { left: 32, top: 63 },   // 7 CM-L
+  { left: 80, top: 55 },   // 8 RW
+  { left: 50, top: 55 },   // 9 ST
+  { left: 20, top: 55 },   // 10 LW
 ];
 
 const _teamData = {
@@ -2399,11 +2606,11 @@ function _renderRoster(teamKey) {
 }
 
 // Team Home/Away tab switching
-document.querySelectorAll('.team-tab').forEach(tab => {
+document.querySelectorAll('.team-tabs-bar .team-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     const key = tab.dataset.teamTab;
     _activeTeamTab = key;
-    document.querySelectorAll('.team-tab').forEach(t => t.classList.toggle('team-tab--active', t.dataset.teamTab === key));
+    document.querySelectorAll('.team-tabs-bar .team-tab').forEach(t => t.classList.toggle('team-tab--active', t.dataset.teamTab === key));
     document.getElementById('rosterPaneHome')?.classList.toggle('roster-pane--hidden', key !== 'home');
     document.getElementById('rosterPaneAway')?.classList.toggle('roster-pane--hidden', key !== 'away');
     _renderTeamTab(key);
@@ -2886,10 +3093,9 @@ document.getElementById('matchEventsList')?.addEventListener('click', (e) => {
   const btn = document.getElementById('darkModeToggle');
   if (!btn) return;
 
-  // Restore saved preference (or use system preference as fallback)
+  // Default to dark mode; respect explicit saved preference only
   const saved = localStorage.getItem('cr-dark');
-  const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
-  if (saved === '1' || (saved === null && prefersDark)) {
+  if (saved !== '0') {
     html.classList.add('dark');
   }
 

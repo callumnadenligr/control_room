@@ -744,7 +744,7 @@ img { display: block; }
 
 /* Section Body */
 .sidebar-section__body {
-  padding: 8px 20px 4px;
+  padding: 12px 20px;
   overflow: hidden;
   transition: max-height 0.25s ease, opacity 0.2s ease;
 }
@@ -898,6 +898,7 @@ img { display: block; }
   border: 1px solid var(--color-border-subtle);
   border-radius: 8px;
   margin-bottom: 12px;
+  margin-top: 0;
 }
 
 .team-tabs .team-tab {
@@ -956,7 +957,7 @@ img { display: block; }
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 6px 0 2px;
+  margin: 12px 0;
 }
 
 .event-buttons-divider::before,
@@ -1194,7 +1195,6 @@ img { display: block; }
 .category-tabs {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-border-secondary);
   flex: 1;
 }
 
@@ -1209,7 +1209,7 @@ img { display: block; }
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
+  margin-bottom: 0;
   font-size: 14px;
   font-weight: 500;
   color: #667085;
@@ -1677,10 +1677,10 @@ img { display: block; }
 .graphics-content {
   flex: 1;
   overflow-y: auto;
-  padding: 24px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 36px;
 }
 
 .graphics-content::-webkit-scrollbar { width: 6px; }
@@ -1691,7 +1691,7 @@ img { display: block; }
 .graphic-group {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 /* Group Header */
@@ -2263,7 +2263,7 @@ img { display: block; }
 
 /* --- Panel Header --- */
 .edit-panel__header {
-  padding: 20px 20px 16px;
+  padding: 20px 20px 0;
   flex-shrink: 0;
 }
 
@@ -2327,7 +2327,7 @@ img { display: block; }
   border-radius: 8px;
   overflow: hidden;
   background: #1a1a2e;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .edit-panel__preview-img {
@@ -2403,7 +2403,15 @@ img { display: block; }
   display: flex;
   gap: 12px;
   align-items: center;
+  margin-top: 0;
   margin-bottom: 16px;
+}
+
+.edit-panel__divider {
+  height: 1px;
+  background: var(--color-border-secondary);
+  margin: 0 20px 16px;
+  flex-shrink: 0;
 }
 .edit-panel__action-btns .btn {
   flex: 1;
@@ -3006,7 +3014,6 @@ img { display: block; }
 .data-sub-tabs-bar {
   display: flex;
   padding: 20px 24px 0;
-  border-bottom: 1px solid var(--color-border-secondary);
   background: #fcfcfd;
   flex-shrink: 0;
   align-items: flex-end;
@@ -3024,7 +3031,7 @@ img { display: block; }
   border: none;
   outline: none;
   border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
+  margin-bottom: 0;
   border-radius: 12px 12px 0 0;
   cursor: pointer;
   white-space: nowrap;
@@ -3188,7 +3195,7 @@ img { display: block; }
   flex: 1;
   min-width: 0;
 }
-.team-field--wide { flex: 0 0 55%; }
+.team-field--wide { flex: 0 0 60%; }
 .team-field__label {
   font-size: 14px;
   font-weight: 500;
@@ -3238,12 +3245,10 @@ img { display: block; }
 
 /* ---- Pitch ---- */
 .pitch-wrap {
-  flex: 0 0 55%;
-  max-width: 480px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex: 0 0 60%;
   overflow: hidden;
+  aspect-ratio: 68 / 52.5;
+  border-radius: 3px;
 }
 
 /* ---- Bench panel ---- */
@@ -3271,14 +3276,14 @@ img { display: block; }
 
 .pitch {
   width: 100%;
-  max-width: 340px;
   aspect-ratio: 68 / 105;
+  /* shift up to show only the attacking (bottom) half: 52.5/68 * 100% ≈ 77.2% */
+  margin-top: -77.2%;
   background: #2d7a3e;
   border: 2px solid rgba(255,255,255,0.7);
   border-radius: 3px;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
 }
 
 /* grass stripe texture */
@@ -3622,7 +3627,6 @@ img { display: block; }
 .stats-cat-bar {
   display: flex;
   padding: 16px 24px 0;
-  border-bottom: 1px solid var(--color-border-secondary);
   background: #fcfcfd;
   flex-shrink: 0;
   overflow-x: auto;
@@ -3638,7 +3642,7 @@ img { display: block; }
   border: none;
   outline: none;
   border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
+  margin-bottom: 0;
   border-radius: 8px 8px 0 0;
   background: transparent;
   font-size: 13px;
@@ -4261,9 +4265,9 @@ img { display: block; }
 /* ============================================================
    GROUP DIVIDERS
    ============================================================ */
-.graphic-group + .graphic-group {
+.graphic-group:not(.graphic-group--hidden) + .graphic-group:not(.graphic-group--hidden) {
   border-top: 1px solid var(--color-border-secondary);
-  padding-top: 8px;
+  padding-top: 20px;
 }
 
 /* ============================================================
@@ -5187,7 +5191,7 @@ html.dark .scoreboard__status-text        { color: var(--color-text-quaternary);
 html.dark .sidebar-match-btn          { background: var(--color-bg-primary); }
 html.dark .sidebar-match-btn:hover    { background: var(--color-bg-tertiary); }
 html.dark .sidebar-section__header:hover { background: var(--color-bg-tertiary); }
-html.dark .sidebar-badge              { background: var(--color-bg-tertiary); }
+html.dark .sidebar-badge              { background: var(--color-bg-tertiary); border-color: var(--color-border-secondary); color: var(--color-text-tertiary); }
 
 /* ---- Score / Number inputs ---- */
 html.dark .number-input__btn          { background: var(--color-bg-primary); }
@@ -5212,15 +5216,15 @@ html.dark .team-tabs .team-tab--active {
 html.dark .event-btn                  { background: var(--color-bg-primary); }
 html.dark .event-btn:hover            { background: var(--color-bg-tertiary); }
 html.dark .event-btn:active           { background: var(--color-border-subtle); }
-html.dark .event-btn--goal            { background: #0e2a1c; border-color: #166534; color: #4ade80; }
+html.dark .event-btn--goal            { background: #0e2a1c; border-color: #14532d; color: #4ade80; }
 html.dark .event-btn--goal:hover      { background: #14391f; }
-html.dark .event-btn--yellow          { background: #2a1f06; border-color: #713f12; color: #fbbf24; }
+html.dark .event-btn--yellow          { background: #2a1f06; border-color: #5a3108; color: #fbbf24; }
 html.dark .event-btn--yellow:hover    { background: #372906; }
-html.dark .event-btn--red             { background: #2d0e0e; border-color: #7f1d1d; color: #f87171; }
+html.dark .event-btn--red             { background: #2d0e0e; border-color: #6b1515; color: #f87171; }
 html.dark .event-btn--red:hover       { background: #3d1111; }
-html.dark .event-btn--sub             { background: #0c1a32; border-color: #1e3a6e; color: #60a5fa; }
+html.dark .event-btn--sub             { background: #0c1a32; border-color: #1a3060; color: #60a5fa; }
 html.dark .event-btn--sub:hover       { background: #102240; }
-html.dark .event-btn--penalty         { background: #1a0f2e; border-color: #4c1d95; color: #a78bfa; }
+html.dark .event-btn--penalty         { background: #1a0f2e; border-color: #3b1d7a; color: #a78bfa; }
 html.dark .event-btn--penalty:hover   { background: #22133a; }
 
 /* ---- Graphic groups + cards ---- */
@@ -5301,8 +5305,10 @@ html.dark .roster-row__num-badge      { background: var(--color-bg-tertiary); }
 html.dark .roster-row__edit           { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
 
 /* ---- Stats cat bar ---- */
-html.dark .stats-cat-bar              { background: var(--color-bg-primary); border-bottom-color: var(--color-border-secondary); }
+html.dark .stats-cat-bar              { background: var(--color-bg-secondary); }
+html.dark .stats-cat                  { color: var(--color-text-quaternary); }
 html.dark .stats-cat:hover            { background: var(--color-bg-tertiary); color: var(--color-text-primary); }
+html.dark .stats-cat--active          { color: var(--color-text-primary); background: var(--color-bg-tertiary); border-bottom-color: var(--color-blue-500); }
 
 /* ---- Clock display ---- */
 html.dark .clock-display              { background: var(--color-bg-primary); border-color: var(--color-border-secondary); }
@@ -5323,14 +5329,26 @@ html.dark .data-form__textarea,
 html.dark .variable-field__input      { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-primary); }
 
 /* ---- Btn secondary ---- */
-html.dark .btn--secondary             { background: var(--color-bg-tertiary); }
+html.dark .btn--secondary             { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-secondary); }
 html.dark .btn--secondary:hover       { background: var(--color-bg-primary); }
 html.dark .btn--secondary svg path,
 html.dark .btn--secondary svg circle,
 html.dark .btn--secondary svg rect    { stroke: var(--color-text-secondary); }
 
+/* ---- Btn icon (edit pencil) ---- */
+html.dark .btn-icon                   { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); box-shadow: none; }
+html.dark .btn-icon:hover             { background: var(--color-bg-primary); }
+html.dark .btn-icon svg path          { stroke: var(--color-text-secondary); }
+
+/* ---- Btn to-air outline (graphic card "To Air") ---- */
+html.dark .btn--to-air-outline        { background: #200e0e; border-color: #5c1a1a; color: #f87171; box-shadow: none; }
+html.dark .btn--to-air-outline:hover  { background: #2d1111; filter: none; }
+html.dark .btn--to-air-outline svg path { stroke: #f87171; }
+
+/* ---- Badge blue-gray ---- */
+html.dark .badge--blue-gray           { background: #1a1f35; border-color: #2a3256; color: #93a4c7; }
+
 /* ---- Content topbar + type tabs (Graphics/Media/Data/Overlays) ---- */
-html.dark .content-topbar             { background: var(--color-bg-primary); }
 html.dark .content-type-tabs          { background: var(--color-bg-secondary); border-color: var(--color-border-subtle); }
 html.dark .content-type-tab           { color: var(--color-text-quaternary); }
 html.dark .content-type-tab--active   {
@@ -5369,10 +5387,14 @@ html.dark .graphic-card--on-air .graphic-card__extension.graphic-card--default {
 }
 
 /* ---- Data sub tabs ---- */
-html.dark .data-sub-tabs-bar          { background: var(--color-bg-primary); }
-html.dark .data-sub-tab               { color: var(--color-text-quaternary); }
-html.dark .data-sub-tab:hover         { color: var(--color-text-primary); background: var(--color-bg-tertiary); }
-html.dark .data-sub-tab--active       { color: var(--color-text-primary); }
+html.dark .data-sub-tabs-bar                { background: var(--color-bg-secondary); border-bottom-color: var(--color-border-secondary); }
+html.dark .data-sub-tab                     { color: var(--color-text-quaternary); }
+html.dark .data-sub-tab:hover               { color: var(--color-text-primary); background: var(--color-bg-tertiary); }
+html.dark .data-sub-tab--active             { color: var(--color-text-primary); background: var(--color-bg-tertiary); border-bottom-color: var(--color-blue-500); }
+html.dark .team-tabs-bar                    { background: var(--color-bg-primary); border-bottom-color: var(--color-border-secondary); }
+html.dark .team-tabs-bar .team-tab          { color: var(--color-text-quaternary); }
+html.dark .team-tabs-bar .team-tab:hover    { color: var(--color-text-primary); background: var(--color-bg-tertiary); }
+html.dark .team-tabs-bar .team-tab--active  { color: var(--color-text-primary); background: var(--color-bg-tertiary); border-bottom-color: var(--color-blue-500); }
 
 /* ---- Variable field inputs (graphic card edit panel) ---- */
 html.dark .variable-field__input      {
@@ -5400,8 +5422,11 @@ html.dark .display-btn-icon--inline:hover { background: var(--color-bg-tertiary)
 /* ---- Global scrollbar ---- */
 html.dark * { scrollbar-color: var(--color-border-primary) transparent; }
 
-/* ---- Content pane background ---- */
-html.dark .content-pane              { background: var(--color-bg-primary); }
+/* ---- Content area background (all sections unified to the darker shade) ---- */
+html.dark .content-area              { background: var(--color-bg-secondary); }
+html.dark .content-pane              { background: var(--color-bg-secondary); }
+html.dark .content-topbar            { background: var(--color-bg-secondary) !important; }
+html.dark .category-tabs-bar         { background: var(--color-bg-secondary) !important; }
 
 /* ---- Edit panel ---- */
 html.dark .edit-panel__title         { color: var(--color-text-secondary); }
@@ -5414,6 +5439,28 @@ html.dark .edit-panel__variables::-webkit-scrollbar-thumb,
 html.dark .edit-panel__tab-pane::-webkit-scrollbar-thumb { background: var(--color-border-primary); }
 html.dark .variable-field__label     { color: var(--color-text-secondary); }
 html.dark .variable-field__input     { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); color: var(--color-text-primary); }
+
+/* ---- Match events list ---- */
+html.dark .match-event              { border-bottom-color: var(--color-border-secondary); }
+html.dark .match-event__team--mel   { background: #0e2a1c !important; color: #4ade80 !important; }
+html.dark .match-event__team--syd   { background: #0c1a32 !important; color: #60a5fa !important; }
+html.dark .match-event--active      { background: #0c1a32; }
+html.dark .match-event--active + .match-event { border-top-color: var(--color-border-secondary); }
+html.dark .match-event__dot         { background: #4b5563; }
+html.dark .match-event__dot--goal   { background: #16a34a; }
+html.dark .match-event__dot--yellow { background: #d97706; }
+html.dark .match-event__dot--red    { background: #dc2626; }
+html.dark .match-event__dot--blue   { background: #2563eb; }
+html.dark .match-event__type--yellow { color: #fbbf24; }
+html.dark .match-event__type--goal   { color: #4ade80; }
+
+/* ---- Event button missing variants ---- */
+html.dark .event-btn--var           { background: #1a0f2e; border-color: #3b1d7a; color: #a78bfa; }
+html.dark .event-btn--var:hover     { background: #22133a; }
+html.dark .event-btn--injury        { background: #2a1406; border-color: #5c2009; color: #fb923c; }
+html.dark .event-btn--injury:hover  { background: #371a08; }
+html.dark .event-btn--ht, html.dark .event-btn--ft { background: #0c1a32; border-color: #1a3060; color: #60a5fa; }
+html.dark .event-btn--ht:hover, html.dark .event-btn--ft:hover { background: #102240; }
 
 /* ---- Match event menu & context menu ---- */
 html.dark .match-event__menu-btn     { background: var(--color-bg-primary); }
@@ -5506,3 +5553,87 @@ html.dark .ag-preview-card__thumb    { background: var(--color-bg-tertiary); }
 
 /* ---- Media prop fields (edit panel) ---- */
 html.dark .media-prop-field          { background: var(--color-bg-tertiary); border-color: var(--color-border-primary); }
+
+/* ===== MATCH DETAILS SECTION ===== */
+.match-details-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: -4px 0 -12px;
+}
+
+.match-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  border-bottom: 1px solid #f2f4f7;
+  position: relative;
+}
+
+.match-detail-row:last-child { border-bottom: none; }
+
+.match-detail-row__key {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-tertiary, #667085);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 76px;
+}
+
+.match-detail-row__value {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary, #101828);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.match-detail-row__menu-btn {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.match-detail-row:hover .match-detail-row__menu-btn {
+  opacity: 1;
+}
+
+.match-detail-row__menu-btn:hover {
+  background: var(--color-bg-tertiary, #f2f4f7);
+}
+
+html.dark .match-detail-row              { border-bottom-color: var(--color-border-secondary); }
+html.dark .match-detail-row__value       { color: var(--color-text-primary); }
+html.dark .match-detail-row__key         { color: var(--color-text-tertiary); }
+html.dark .match-detail-row__menu-btn:hover { background: var(--color-bg-secondary); }
+
+/* ===== TEAM KITS SECTION ===== */
+.team-kits-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 16px 8px;
+}
+
+.team-kits-footer {
+  padding: 0 16px 12px;
+}
+
+.btn--full-width {
+  width: 100%;
+  justify-content: center;
+}
