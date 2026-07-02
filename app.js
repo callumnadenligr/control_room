@@ -827,14 +827,17 @@ function openPanel(cardId, name, numVars) {
   const isMediaCard = btn?.dataset.cardType === 'media';
   const mediaPlaybackEl = document.getElementById('panelMediaPlayback');
 
+  const panelTabVarsEl = document.getElementById('panelTabVars');
   if (isMediaCard) {
     panelSubtitle.innerHTML = `Media <span>•</span> More Info`;
     if (mediaPlaybackEl) mediaPlaybackEl.style.display = '';
     if (panelVariables) { panelVariables.style.display = 'none'; }
+    if (panelTabVarsEl) panelTabVarsEl.textContent = 'Variables';
   } else {
     panelSubtitle.innerHTML = `${numVars} Variable${numVars !== 1 ? 's' : ''}`;
     if (mediaPlaybackEl) mediaPlaybackEl.style.display = 'none';
     if (panelVariables) { panelVariables.style.display = ''; panelVariables.innerHTML = buildVariableFields(cardId, numVars); }
+    if (panelTabVarsEl) panelTabVarsEl.textContent = `Variables (${numVars})`;
   }
 
   // Set panel preview from card thumbnail SVG

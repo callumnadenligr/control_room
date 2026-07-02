@@ -2351,7 +2351,7 @@ img { display: block; }
 
 .edit-panel__header-content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
 }
@@ -2363,10 +2363,10 @@ img { display: block; }
 }
 
 .edit-panel__title {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
-  color: #344054;
-  line-height: 20px;
+  color: var(--color-text-primary);
+  line-height: 1.3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2395,8 +2395,8 @@ img { display: block; }
   border-radius: 8px;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background 0.15s;
-  margin-top: -4px;
+  color: #667085;
+  transition: background 0.15s, color 0.15s;
 }
 
 .edit-panel__close:hover { background: #f2f4f7; }
@@ -2498,12 +2498,12 @@ img { display: block; }
 .edit-panel__action-btns .btn {
   flex: 1;
   min-width: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-family: var(--font-body);
   font-weight: 500;
-  height: 44px;
-  padding: 10px 12px;
-  gap: 6px;
+  height: 40px;
+  padding: 10px 16px;
+  gap: 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -5513,9 +5513,10 @@ html.dark .search-icon-btn:hover     { background: var(--color-bg-primary); colo
 html.dark .category-tabs-bar         { background: var(--color-bg-secondary) !important; }
 
 /* ---- Edit panel ---- */
-html.dark .edit-panel__title         { color: var(--color-text-secondary); }
+html.dark .edit-panel__title         { color: var(--color-text-primary); }
 html.dark .edit-panel__subtitle      { color: var(--color-text-tertiary); }
-html.dark .edit-panel__close:hover   { background: var(--color-bg-tertiary); }
+html.dark .edit-panel__close         { color: var(--color-text-secondary); }
+html.dark .edit-panel__close:hover   { background: var(--color-bg-tertiary); color: var(--color-text-primary); }
 html.dark .edit-panel__tabs-bar      { background: var(--color-bg-secondary); border-color: var(--color-border-subtle); }
 html.dark .edit-panel__tab           { color: var(--color-text-quaternary); }
 html.dark .edit-panel__tab--active   { background: var(--color-bg-primary); border-color: var(--color-border-primary); color: var(--color-text-primary); }

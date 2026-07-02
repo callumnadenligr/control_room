@@ -1323,8 +1323,14 @@
 
       <!-- Panel Header -->
       <div class="edit-panel__header">
-        <!-- Hidden elements kept for JS data binding -->
-        <p id="panelTitle" style="display:none"></p>
+        <!-- Name + close row -->
+        <div class="edit-panel__header-content">
+          <span class="edit-panel__title" id="panelTitle"></span>
+          <button class="edit-panel__close" id="panelClose" title="Close panel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <!-- Hidden subtitle for JS data binding -->
         <p id="panelSubtitle" style="display:none"></p>
 
         <!-- Preview image -->
@@ -1349,15 +1355,15 @@
 
         <!-- Action buttons -->
         <div class="edit-panel__action-btns">
-          <button class="btn btn--secondary btn--flex" id="panelLocalBtn">
+          <button class="btn btn--secondary btn--md btn--flex" id="panelLocalBtn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
             Local
           </button>
-          <button class="btn btn--secondary btn--flex" id="panelUrlBtn">
+          <button class="btn btn--secondary btn--md btn--flex" id="panelUrlBtn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.42 12.713c-.136-.215-.204-.323-.242-.49a1.173 1.173 0 0 1 0-.446c.038-.167.106-.274.242-.49C3.546 9.505 6.895 5 12 5s8.455 4.505 9.58 6.287c.137.215.205.323.243.49.029.125.029.322 0 .446-.038.167-.106.274-.242.49C20.455 14.495 17.105 19 12 19c-5.106 0-8.455-4.505-9.58-6.287Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
             Preview
           </button>
-          <button class="btn btn--to-air-outline btn--flex" id="panelToAirBtn">
+          <button class="btn btn--to-air-outline btn--md btn--flex" id="panelToAirBtn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.243 7.757a6 6 0 0 1 0 8.486m-8.486 0a6 6 0 0 1 0-8.486M4.93 19.071c-3.905-3.905-3.905-10.237 0-14.142m14.142 0c3.905 3.905 3.905 10.237 0 14.142M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
             To Air
           </button>
